@@ -89,7 +89,7 @@ export const data = [
                 keys: ["'Space'"],
             }
         ],
-        repoUrl: "https://gameprotoype.netlify.app/"
+        repoUrl: "https://github.com/ManuelCappai94/prototipo"
     },
     {
         _id: "My Portfolio",

@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+
 import { mainSkills, additionalSkills } from '../../../utils/Assets'
 import "../../../styles/skills.css"
 
 
 const Skills = ({skillRef}) => {
-const [core, setCore] = useState(mainSkills)
-const [ndCore, setNdCore] = useState(additionalSkills)
+const core = mainSkills
+const ndCore = additionalSkills
 
   return (
     <section ref={skillRef} className='projects-section skills'>

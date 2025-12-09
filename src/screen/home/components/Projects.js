@@ -1,4 +1,4 @@
-import {React, useState, useEffect, useCallback} from 'react'
+import {useState, useEffect, useCallback} from 'react'
 import { data } from '../../../utils/Data'
 import fallBackImg from "../../../images/fallBack.png"
 import { FaCircle } from "react-icons/fa6";
@@ -10,7 +10,7 @@ import "../../../styles/projects.css"
 
 
 const Projects = ({projectsRef}) => {
-    const [slides, setSlides] = useState(data)
+    const slides = data //non serve lo useState qua, non c'è nessun nuovo render, sono dati statici
     const [active, setActive] = useState(0)
     //sperimento con il touch
     const [touchStart, setTouchStart] = useState(0)

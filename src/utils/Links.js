@@ -1,4 +1,4 @@
-import { FaGithub, FaCodeBranch, FaInfo } from "react-icons/fa";
+import { FaGithub} from "react-icons/fa";
 import { FaSquareInstagram, FaLinkedin } from "react-icons/fa6"
 import { SiNetlify } from "react-icons/si";
 

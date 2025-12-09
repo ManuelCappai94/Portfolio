@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react'
+import {useState, useEffect, useRef} from 'react'
 import "../../../styles/projectDetails.css"
 
 const ProjectDescription = ({project}) => {
@@ -29,7 +29,7 @@ const [isfullScreen, setIsFullscreen] = useState(false)
               <h1 className='project-title'><span className='tag-details'>&lt;</span>{title}<span className='tag-details'>/&gt;</span></h1>
               <ProjectExtras controls={controls} howToUse={howToUse}/>
               <div className='prj-view-cont' ref={contRef}>
-                <iframe src={demoUrl} className={`prj-view ${_id}`}>
+                <iframe src={demoUrl} className={`prj-view ${_id}`} title={title}>
                 </iframe>
                   <button className={_id === "Game_Prototype"? "fullbtn game": "fullbtn"} onClick={goFullScreen}>FullScreen</button>
               </div>  
@@ -58,7 +58,7 @@ const [isfullScreen, setIsFullscreen] = useState(false)
                         <a 
                         href={repoUrl}
                         target='_blank'
-                        rel='external'
+                        rel='noopener noreferrer'
                         className='repo-url'
                         >Link to {title} repository</a>
                     </aside>

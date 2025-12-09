@@ -1,9 +1,9 @@
-import React from "react";
+
 import cat from "../images/cat.png"
 import calendar from "../images/calendar.png"
 import cover from "../images/cover.png"
 import { devIcons } from "./Assets";
-import {v4 as uuid} from "uuid"
+
 
 
 export const data = [

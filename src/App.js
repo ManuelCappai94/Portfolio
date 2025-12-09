@@ -2,7 +2,7 @@ import Navbar from './components/Navbar';
 import Home from './screen/home/Home';
 import ProjectDetails from './screen/projectDetails/ProjectDetails';
 import ErrorePage from './screen/ErrorePage';
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, useCallback, useMemo } from 'react';
 
 import {  Route, Routes, useLocation } from 'react-router-dom';
 import "./styles/global.css"
@@ -47,33 +47,44 @@ useEffect(()=>{
 }, [theme])
 
 
-const scrollTo = {
-  hero: () => heroRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }),
-  projects: () => projectsRef.current?.scrollIntoView({ behavior: "smooth", block: "center"}),
-  skills: () => skillRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }),
-  about: () => aboutRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }),
-};
+// const scrollTo = {
+//   hero: () => heroRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }),
+//   projects: () => projectsRef.current?.scrollIntoView({ behavior: "smooth", block: "center"}),
+//   skills: () => skillRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }),
+//   about: () => aboutRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }),
+// };
+
+const scrollToHero = useCallback(() => {
+  heroRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+}, []);
+
+const scrollToProjects = useCallback(() => {
+  projectsRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+}, []);
+
+const scrollToSkills = useCallback(() => {
+  skillRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+}, []);
+
+const scrollToAbout = useCallback(() => {
+  aboutRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+}, []);
+
+const scrollTo = useMemo(() => ({
+  hero: scrollToHero,
+  projects: scrollToProjects,
+  skills: scrollToSkills,
+  about: scrollToAbout
+}), [scrollToHero, scrollToProjects, scrollToSkills, scrollToAbout]);
 
 
-
-  //     useEffect(() => {
-  //   if (location.state?.scrollTo === "projects") {
-  //     scrollToProjects();
-  //   } else if (location.state?.scrollTo ==="hero"){
-  //     scrollToHero()
-  //   } else if (location.state?.scrollTo === "skills"){
-  //     scrollToSkills();
-  //   } else if(location.state?.scrollTo === "about"){
-  //     ScrollToAbout();
-  //   }
-  // }, [location]);
 
 useEffect(() => {
   const target = location.state?.scrollTo;
   if (target && scrollTo[target]) {
     scrollTo[target]();
   }
-}, [location]);
+}, [location, scrollTo]);
 
 
   return (

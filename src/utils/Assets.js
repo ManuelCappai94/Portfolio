@@ -1,14 +1,13 @@
-import React from 'react'
+
 import { BsCode, BsCodeSlash } from "react-icons/bs";
 import { SlOptions, SlOptionsVertical } from "react-icons/sl";
 import { LiaToggleOffSolid, LiaToggleOnSolid } from "react-icons/lia";
 import { GrNext, GrPrevious } from "react-icons/gr";
-import { FaJsSquare, FaReact, FaCss3Alt, FaHtml5, FaNodeJs, FaGitAlt, FaGithub, FaServer, FaNpm } from "react-icons/fa";
-import { BiLogoTypescript, BiLogoVisualStudio } from "react-icons/bi";
+import { FaJsSquare, FaReact, FaCss3Alt, FaHtml5, FaGitAlt, FaGithub, FaServer, FaNpm } from "react-icons/fa";
+import { BiLogoTypescript } from "react-icons/bi";
 import { SiRedux, SiTypescript } from "react-icons/si";
-import { FiGrid } from "react-icons/fi";
 import { RiNextjsFill } from "react-icons/ri";
-import {v4 as uuid4, v4} from "uuid"
+import { v4} from "uuid"
 
 export const tagIcons = {
     openTag: <BsCode className="icons subtitles"/>,

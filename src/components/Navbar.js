@@ -1,4 +1,4 @@
-import {React, useState, useEffect} from 'react'
+import { useState} from 'react'
 import { SocialIcons } from '../utils/Links'
 import LinksMenu, { tagIcons, OptionMenu }from '../utils/Assets'
 import "../styles/navbar.css"

@@ -1,9 +1,10 @@
 import {React, useState, useEffect, useCallback} from 'react'
-import { tagIcons } from '../assets/Assets'
-import { data } from '../utils/Data'
-import fallBackImg from "../images/fallBack.png"
+import { data } from '../../../utils/Data'
+import fallBackImg from "../../../images/fallBack.png"
 import { FaCircle } from "react-icons/fa6";
-import { arrows } from '../assets/Assets';
+import { arrows } from '../../../utils/Assets';
+import { useNavigate } from 'react-router-dom';
+import "../../../styles/projects.css"
 
 
 
@@ -13,6 +14,7 @@ const Projects = ({projectsRef}) => {
     const [active, setActive] = useState(0)
     //sperimento con il touch
     const [touchStart, setTouchStart] = useState(0)
+   
    
 
 // Functional State, React garantisce che prev è l’ultimo valore reale dello stato. perchè react puo ritardare deli update, quindi questo garantisce che quello sia l'ultimo valore;
@@ -51,14 +53,15 @@ useEffect (() => {
 
 
   return (
+    <>
     <section ref={projectsRef} className='projects-section'>
         <div className='title-container prj'>
             <h2 className='prj-title'>
-                 {tagIcons.openTag}
+              <span className='tag-component-prj'> &lt; </span>
                 Projects
-                {tagIcons.closeTag}
+                <span className='tag-component-prj'>/&gt;</span>
                 </h2>
-                <div className='bar'></div>
+    
         </div>
             <div 
             className='slides-container'  
@@ -81,7 +84,7 @@ useEffect (() => {
                         }
                         // console.log(active,  index, relativePosition)
                         
-                        return <Slide key={slide.id} {...slide} classes={position}/>
+                        return <Slide key={slide._id} {...slide} classes={position}/>
                     })
                 }
             <ul className='slider-dots'>
@@ -104,16 +107,31 @@ useEffect (() => {
                 {arrows.next}
             </button>
         </aside>
-
             </div>
-     
+     <div className="corner-prj corner-prj-top-left"></div>
+     <div className="corner-prj corner-prj-bottom-right"></div>
+        <div className="scroll-indicator">
+          <span className="mouse-icon"></span>
+        </div>
     </section>
+     
+     
+     
+      </>
   )
 }
 
 
 
-const Slide = ({ title, tecnologies,icon, desc, img, version, classes}) => {
+const Slide = ({ title, tecnologies,icon, desc, img, version, classes, _id}) => {
+    const navigate = useNavigate()
+    const goToProject =  (_id) => {
+        if(_id === "My Portfolio") {
+        window.scrollTo({top:0, behavior: "smooth"})
+        } else {
+            navigate(`projectDetails/${_id}`)
+        }
+    }
      return (
     <article className={`slide-article ${classes}`}>
         <div className='slide-img'>
@@ -123,7 +141,14 @@ const Slide = ({ title, tecnologies,icon, desc, img, version, classes}) => {
             <h3 className='h3-slide'>{title}</h3>
             <h4 className='tecn-slide'>{tecnologies}  {icon}</h4>
             <p className='desc-slide'>{desc}</p>
-            <p className='v-slide'>{version}</p>
+            <aside className='view-container'>
+                <button
+                  type='button'
+                  className='view-btn'
+                  onClick={()=> goToProject(_id)}
+                  > {_id === "My Portfolio"? "Scroll to Top": "View project"}</button>
+                <p className='v-slide'>{version}</p>
+            </aside>
         </div>
        
     </article>

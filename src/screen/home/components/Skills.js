@@ -1,18 +1,20 @@
 import React, { useState } from 'react'
-import { tagIcons, mainSkills, additionalSkills } from '../assets/Assets'
+import { mainSkills, additionalSkills } from '../../../utils/Assets'
+import "../../../styles/skills.css"
+
 
 const Skills = ({skillRef}) => {
 const [core, setCore] = useState(mainSkills)
 const [ndCore, setNdCore] = useState(additionalSkills)
 
   return (
-    <section ref={skillRef} className='projects-section'>
-      <div className='title-container prj'>
+    <section ref={skillRef} className='projects-section skills'>
+      <div className='title-container skills'>
        
-          <h2 className='prj-title'>
-           {tagIcons.openTag}
+          <h2 className='skills-main-title'>
+          <span className='tag-component-skill'> &lt;</span>
             Skills
-            {tagIcons.closeTag}
+           <span className='tag-component-skill'>/&gt;</span>
           </h2>
         
       </div>
@@ -42,12 +44,15 @@ const [ndCore, setNdCore] = useState(additionalSkills)
             }
           </div>
       </article>
-      
+      <div className="corner-skill bottom-right"></div>
+      <div className="corner-skill bottom-left"></div>
+        <div className="scroll-indicator">
+          <span className="mouse-icon"></span> </div>
     </section>
   )
 }
 
-const CoreSkills = ({title, icon}) => {
+const CoreSkills = ({title, subtitle, icon}) => {
   return(
   <section className='single-skill' >
         <span className='icon-container'>
@@ -55,6 +60,9 @@ const CoreSkills = ({title, icon}) => {
         </span>
         <p className='title-dev'>
           {title}
+        </p>
+          <p className='subTitle-dev'>
+          {subtitle || ""}
         </p>
   </section>
   )

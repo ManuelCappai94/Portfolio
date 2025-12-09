@@ -1,51 +1,34 @@
 import { FaGithub, FaCodeBranch, FaInfo } from "react-icons/fa";
-import { FaSquareInstagram } from "react-icons/fa6"
-import { MdHomeFilled, MdOutlineApps } from "react-icons/md";
+import { FaSquareInstagram, FaLinkedin } from "react-icons/fa6"
+import { SiNetlify } from "react-icons/si";
 
 
 
- const links = [
-    {
-        id: 1,
-        url: "/",
-        target: "hero",
-        icon: <MdHomeFilled className="nav-icons"/>,
-        text: "Home",
-    },
-    {
-        id: 2,
-        url: "/",
-        target: "projects",
-        icon: <MdOutlineApps className="nav-icons"/>,
-        text: "Projects"
-    },
-    {
-        id: 3,
-        url: "/",
-        target: "skills",
-        icon: <FaCodeBranch className="nav-icons"/>,
-        text: "Skills"
-    },
-    {
-        id: 4,
-        url: "/",
-        target: "about",
-        icon: <FaInfo className="nav-icons"/>,
-        text: "About"
-    }
-]
+
+
+
 
 const socialLinks = [
     {
         id: 1,
-        url: "https://github.com/",
+        url: "https://github.com/ManuelCappai94?tab=repositories",
         icon: <FaGithub className="social-icon"/>
     },
     {
         id: 2,
         url: "https://www.instagram.com/",
         icon: <FaSquareInstagram className="social-icon"/>
-    }
+    },
+    {
+        id: 3,
+        url: "https://app.netlify.com/teams/manuelcappai94/projects?creator=me",
+        icon: <SiNetlify className="social-icon"/>
+    },
+    {
+        id: 4,
+        url: "https://app.netlify.com/teams/manuelcappai94/projects?creator=me",
+        icon: <FaLinkedin className="social-icon"/>
+    },
 ]
 
 
@@ -72,4 +55,4 @@ const SocialIcons = () => {
 
 
 
-export {links, SocialIcons}
+export { SocialIcons}

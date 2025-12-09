@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=VT323&display=swap');
+
+:root {
+  /* da spostare appena programmo il tema */
+ 
+/*shadow*/
+   --light-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 4px 5px 15px rgba(5, 6, 6, 0.4);
+    /*global*/
+    --transition: all 0.2s ease;
+    --slideTransition: all 0.5s ease;
+    --btnTransition: all 0.125s ease;
+}
+
+:root.dark-mode {
+  --bg: #1E1E1E;
+  --bg-alt: #2c2c2c;
+  --bg-alt2: #232323;
+  --bg-slide:#cec8c8f8;
+  --bg-skill:#e2dcdcf8;
+  --accent: #007ACC;
+  --text: #D4D4D4;
+  --text-muted: #808080;
+  --highlight: #569CD6;
+  --comment: #6A9955;
+  --string: #ca6f4b;
+  --keyword: #C586C0;
+  --gb-dpad: #1C1C1C;
+}
+
+/* Light theme */
+:root.light-mode {
+  --bg: #FFFFFF;
+  --bg-alt: #F3F3F3;
+  --bg-alt2: #cec8c8f8;
+  --bg-slide:#232323;
+  --bg-skill:#1f1d1dd7;
+  --accent: #0064B0;
+  --text: #1E1E5E;
+  --text-muted: #5A5A5A;
+  --highlight: #2B88D8;
+  --comment: #017F3F;
+  --string: #A65C4E;
+  --keyword: #7B4E98;
+  --gb-dpad: #1C1C1C;
+}
+
+
+
+.bar {
+  position: relative;
+  width: 50%;
+  height: 2px;
+  background-color: black;
+  margin: 0.5rem 0;
+}
+
+.bar::before,
+.bar::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background: black; /* colore del pallino */
+  border-radius: 50%;
+}
+.bar::before {
+  left: 0;
+}
+.bar::after {
+  right: 0;
+}
+
+/*nel bodi mettero i colori da usare globalmente per dark mode*/
+
+body {
+    font-family: "Fira Code", monospace; 
+    overflow-x: hidden;
+    background-color: var(--bg-alt2);
+    margin: 0;
+
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+
+
+button {
+  border: none;
+  cursor: pointer;
+  width: 5rem;
+}
+ h1 {
+    margin-top: 0;
+    /* padding-bottom: 4rem; */
+   font-size: clamp(1.2rem, 4vw + 1rem, 3rem);
+ }
+ h2 {
+  font-size: clamp(1rem, 1.2rem, 2.5rem);
+  margin-bottom: 0;
+ }
+
+h3 {
+  margin:0;
+}
+
+.corner {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-right: 10px solid var(--keyword);
+  border-bottom: 10px solid var(--keyword);
+  opacity: 0.4;
+   transform: skew(-30deg);
+}
+
+.corner-top-left {
+  top: 5rem;
+  left: 0;
+  transform: rotate(180deg) skew(-30deg);
+}
+
+.corner-top-left-prj {
+  top: 0;
+  left: 0;
+  transform: rotate(180deg) skew(-30deg);
+}
+
+.corner-bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.mouse-icon {
+  display: block;
+  width: 18px;
+  height: 32px;
+  border: 2px solid var(--text-muted);
+  border-radius: 12px;
+  opacity: .35;
+  animation: scrollAnim 2s infinite ease-in-out;
+  position: relative;
+}
+
+.mouse-icon::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 7px;
+  background-color: var(--text-muted);
+  border-radius: 2px;
+  animation: scrollDot 2s infinite;
+}
+
+footer{
+  background: var(--bg);
+  color: var(--text);
+
+}
+@keyframes scrollAnim {
+  0%, 100% {
+    opacity: .25;
+    transform: translate(-50%, 0);
+  }
+  50% {
+    opacity: .65;
+    transform: translate(-50%, 6px);
+  }
+}
+
+@keyframes scrollDot {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0);
+  }
+  50% {
+    opacity: .8;
+    transform: translate(-50%, 6px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 0);
+  }
+}
+
+
+@media screen and  (min-width: 992px){
+  body{
+    max-width: 1200px;
+     margin: 0 auto;
+  }
+h1 {
+  margin-top: 0;
+  font-size: 52px;
+}
+
+h2 {
+  font-size: 50px;
+}
+.corner {
+
+  width: 300px;
+}
+
+
+
+}

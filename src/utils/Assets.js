@@ -3,10 +3,11 @@ import { BsCode, BsCodeSlash } from "react-icons/bs";
 import { SlOptions, SlOptionsVertical } from "react-icons/sl";
 import { LiaToggleOffSolid, LiaToggleOnSolid } from "react-icons/lia";
 import { GrNext, GrPrevious } from "react-icons/gr";
-import { FaJsSquare, FaReact, FaCss3Alt, FaHtml5, FaNodeJs, FaGitAlt, FaGithub, FaServer, FaNpm, FaPhp } from "react-icons/fa";
+import { FaJsSquare, FaReact, FaCss3Alt, FaHtml5, FaNodeJs, FaGitAlt, FaGithub, FaServer, FaNpm } from "react-icons/fa";
 import { BiLogoTypescript, BiLogoVisualStudio } from "react-icons/bi";
 import { SiRedux, SiTypescript } from "react-icons/si";
 import { FiGrid } from "react-icons/fi";
+import { RiNextjsFill } from "react-icons/ri";
 import {v4 as uuid4, v4} from "uuid"
 
 export const tagIcons = {
@@ -69,11 +70,13 @@ export const mainSkills = [
     title: "Css3",
     icon: <FaCss3Alt style={{color: "rgba(42, 49, 240, 1)"}}/>
   },
-  {
+   {
     id: v4(),
-    title: "Redux",
-    icon: <SiRedux style={{color: "rgba(68, 3, 87, 1)"}}/>
+    title: "NextJs",
+    subtitle: "//In Progress",
+    icon: <RiNextjsFill style={{color: "rgba(0, 1, 42, 1)"}}/>
   },
+  
   // {
   //   id: v4(),
   //   title: "Node.js",
@@ -85,36 +88,33 @@ export const mainSkills = [
 export const additionalSkills = [
   {
     id: v4(),
-    title: "Git",
-    icon: <FaGitAlt style={{color:"orange"}}/>
+    title: "Rest Api",
+    subtitle: "//front-end",
+    icon: <FaServer/>
   },
-  {
+{
     id: v4(),
     title: "Npm",
-    icon: <FaNpm style={{color:"rgba(25, 66, 2, 1)"}}/>
+    icon: <FaNpm style={{color:"rgba(0, 0, 0, 1)"}}/>
   },
+
+
+
   {
     id: v4(),
     title: "Git Hub",
     icon: <FaGithub style={{color: "rgba(68, 3, 87, 1)"}}/>
   },
-  {
+   {
     id: v4(),
-    title: "Rest Api",
-    subtitle: "(front-end)",
-    icon: <FaServer/>
+    title: "Git",
+    icon: <FaGitAlt style={{color:"orange"}}/>
   },
-  {
+       {
     id: v4(),
-    title: "PhP",
-    subtitle: "(basics)",
-    icon: <FaPhp style={{color: "rgba(42, 49, 240, 1)"}}/>
-  },
-  {
-    id: v4(),
-    title: "Ux/Ui Design",
-    subtitle: "(basics)",
-    icon: <FiGrid/>
+    title: "Redux",
+    subtitle: "//In Progress",
+    icon: <SiRedux style={{color: "rgba(68, 3, 87, 1)"}}/>
   },
 ]
 

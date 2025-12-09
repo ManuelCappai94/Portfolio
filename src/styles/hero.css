@@ -1,0 +1,102 @@
+.hero-section {
+  padding-top:5rem;
+  position: relative;
+  height: 80dvh;
+  width: 100vi;
+  display: flex;
+  flex-direction: column;
+    justify-content: space-around;
+  align-items: center;
+  box-shadow: var(--dark-shadow);
+  background-color: var(--bg-alt2);
+  overflow: hidden;
+   /* padding: 0 3rem; */
+}
+
+  
+.title-container {
+  position: relative;
+  top: 20%;
+  transform: translateY(-50%);
+  font-family: "Fira Code", monospace;
+}
+.titles {
+    color: var(--text);
+
+  }
+
+
+.hero-article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ font-family: "Fira Code", monospace;
+ color: var(--text-muted);
+ /* width: 100%; */
+}
+
+.text-article {
+  text-align: center;
+  margin: 0 5rem;
+  padding-top: 1rem; 
+  border-top: 2px dashed black;
+  font-size: clamp(0.9rem, 1.5vw + 0.3rem, 1.6rem);
+}
+
+
+.highlighted{
+  color: var(--keyword);
+}
+.commented{
+  color: var(--comment);
+}
+.animated-text {
+  display: flex;
+  justify-content: center; /* centra l’animazione */
+  width: 15rem;
+}
+.typewriter {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 23ch; /* 23 caratteri */
+  animation: typing 4s steps(23)
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 23ch; }
+}
+
+@media screen and (min-width: 992px) {
+ .hero-section {
+  flex-direction: row;
+  width: 100%;
+  max-width: 1200px;
+  height: 50rem;
+  margin: 0 auto;
+  box-shadow: var(--dark-shadow);
+}
+.title-container {
+  position: relative;
+  top: 10%;
+  left: 5%;
+}
+.titles {
+  display: block;
+}
+
+.text-article {
+  position: relative;
+  border-top: none;
+  text-align: left;
+  border-left: 2px dashed black;
+  padding-left: 1rem;
+  font-size: clamp(0.8rem, 1.5vw + 0.3rem, 1.2rem);
+  margin: 0 0 0 1rem;
+  left: 60%;
+  transform: translateX(-50%);
+}
+
+
+}

@@ -2,6 +2,7 @@
 import cat from "../images/cat.png"
 import calendar from "../images/calendar.png"
 import cover from "../images/cover.png"
+import portfolio from "../images/portfolio.png"
 import { devIcons } from "./Assets";
 
 
@@ -97,7 +98,7 @@ export const data = [
         tecnologies: "React",
         icon: devIcons.react,
         desc: "This Portofolio, enjoy !",
-        img: "",
+        img: portfolio,
         version: "v.1.0"
     }
 ]

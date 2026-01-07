@@ -1,6 +1,6 @@
 import { FaGithub} from "react-icons/fa";
-import { FaSquareInstagram, FaLinkedin } from "react-icons/fa6"
-import { SiNetlify } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa6"
+
 
 
 
@@ -16,17 +16,7 @@ const socialLinks = [
     },
     {
         id: 2,
-        url: "https://www.instagram.com/",
-        icon: <FaSquareInstagram className="social-icon"/>
-    },
-    {
-        id: 3,
-        url: "https://app.netlify.com/teams/manuelcappai94/projects?creator=me",
-        icon: <SiNetlify className="social-icon"/>
-    },
-    {
-        id: 4,
-        url: "https://app.netlify.com/teams/manuelcappai94/projects?creator=me",
+        url: "https://www.linkedin.com/in/manuel-cappai-1b5507335",
         icon: <FaLinkedin className="social-icon"/>
     },
 ]

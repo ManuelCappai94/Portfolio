@@ -22,7 +22,7 @@ function About({aboutRef}) {
                 I also love to explore new sides of development <span className='commented'>{'[--in the future--]'}</span>, I&#8217;d like to dive deeper into <span className='highlighted'>backend technologies</span> and even <span className='highlighted'>low-level programming</span>, just to understand how things really work behind the scenes. <br/><br/>
               <span className='string' style={{fontWeight: "bold"}}>"I want to become a better Developer!"</span>
               <br/><br/> Check my <a 
-                href="https://1drv.ms/b/c/5e037bc7a8950ec9/IQDHvztfGibtRJUCJWFsaNKMAUFMX0LEKiOl2iJ4h8e9MDg?e=PHhPXA"
+                href="https://1drv.ms/b/c/5e037bc7a8950ec9/IQADSW1W6ynYTIIOU8vM6rFNAe4P14E7ZJa9MSN2v6GN6nc?e=FSwG9U"
                 target='_blank'
                 rel='noopener noreferrer'
                 className='commented'>

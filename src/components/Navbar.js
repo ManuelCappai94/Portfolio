@@ -1,4 +1,4 @@
-import { useState} from 'react'
+import { useEffect, useRef, useState} from 'react'
 import { SocialIcons } from '../utils/Links'
 import LinksMenu, { tagIcons, OptionMenu }from '../utils/Assets'
 import "../styles/navbar.css"
@@ -13,6 +13,8 @@ const Navbar = ({scrollTo, changeTheme, theme}) => {
   const navigate = useNavigate();
   const location = useLocation();
   const isOn = theme === "dark-mode"
+  const containerRef = useRef(null)
+  const optionsRef = useRef(null)
 
  const links = [
     {
@@ -44,6 +46,33 @@ const Navbar = ({scrollTo, changeTheme, theme}) => {
      
     },
 ]
+const handleClickCloseMenù = (e) => {
+  if (containerRef.current && !containerRef.current.contains(e.target)) {
+    setUseActive(false)
+  }
+  if (optionsRef.current && !optionsRef.current.contains(e.target)) {
+    setIsOpen(false)
+  }
+}
+useEffect(()=>{
+  if(isActive){
+    document.addEventListener("mousedown", handleClickCloseMenù)
+  } else {
+    document.removeEventListener("mousedown", handleClickCloseMenù)
+  }
+  return ()=> document.removeEventListener("mousedown", handleClickCloseMenù)
+}, [isActive])
+
+useEffect(()=>{
+  if(isOpen){
+    document.addEventListener("mousedown", handleClickCloseMenù)
+  } else {
+    document.removeEventListener("mousedown", handleClickCloseMenù)
+  }
+  return ()=> document.removeEventListener("mousedown", handleClickCloseMenù)
+}, [isOpen])
+  
+
 
   const switchTheme = () =>{
     changeTheme()
@@ -72,7 +101,9 @@ const Navbar = ({scrollTo, changeTheme, theme}) => {
             <LinksMenu isActive={isActive}/>
         </button>
       </header>
-<section className={isActive? 'links-container show ' : 'links-container ' }>
+<section
+  ref={containerRef}
+   className={isActive? 'links-container show ' : 'links-container ' }>
         <ul className='nav-links'>
           <li style={{marginTop: 6, marginRight: 0}}>{tagIcons.openTag}</li>
              {
@@ -94,7 +125,9 @@ const Navbar = ({scrollTo, changeTheme, theme}) => {
        <div className='social-icons-container'>
         <SocialIcons/>
        </div> 
-      <aside className={isOpen? 'options-menu show' : "options-menu"}>
+      <aside
+        ref={optionsRef} 
+        className={isOpen? 'options-menu show' : "options-menu"}>
         <span className='options-text'>
          {isOn? "Dark-mode: ": "Light-mode: " }
           </span>

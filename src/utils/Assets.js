@@ -5,7 +5,7 @@ import { LiaToggleOffSolid, LiaToggleOnSolid } from "react-icons/lia";
 import { GrNext, GrPrevious } from "react-icons/gr";
 import { FaJsSquare, FaReact, FaCss3Alt, FaHtml5, FaGitAlt, FaGithub, FaServer, FaNpm } from "react-icons/fa";
 import { BiLogoTypescript } from "react-icons/bi";
-import { SiRedux, SiTypescript } from "react-icons/si";
+import { SiRedux, SiTypescript, SiNextdotjs } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 import { v4} from "uuid"
 
@@ -29,6 +29,7 @@ export const devIcons ={
   js: <FaJsSquare className='dev-icons'/>,
   ts: <BiLogoTypescript className='dev-icons'/>,
   react: <FaReact className='dev-icons'/>,
+  next: <SiNextdotjs className="dev-icons"/>,
 }
 
 const LinksMenu = ({isActive}) => {

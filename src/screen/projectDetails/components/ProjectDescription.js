@@ -1,5 +1,6 @@
 import {useState, useEffect, useRef} from 'react'
 import "../../../styles/projectDetails.css"
+import fallBackProjects from "../../../images/fallBackProjects.png"
 
 const ProjectDescription = ({project}) => {
 const [isfullScreen, setIsFullscreen] = useState(false)
@@ -29,8 +30,20 @@ const [isfullScreen, setIsFullscreen] = useState(false)
               <h1 className='project-title'><span className='tag-details'>&lt;</span>{title}<span className='tag-details'>/&gt;</span></h1>
               <ProjectExtras controls={controls} howToUse={howToUse}/>
               <div className='prj-view-cont' ref={contRef}>
-                <iframe src={demoUrl} className={`prj-view ${_id}`} title={title}>
+                { demoUrl? (
+                   <iframe 
+                    src={demoUrl} 
+                    className={`prj-view ${_id}`} 
+                    title={title}>
                 </iframe>
+                ) : (
+                    <div className='prj-fallback'>
+                    <img src={fallBackProjects} alt='Project not deployed yet' className='prj-fallback-image' />
+                  </div>
+                )
+
+                }
+               
                   <button className={_id === "Game_Prototype"? "fullbtn game": "fullbtn"} onClick={goFullScreen}>FullScreen</button>
               </div>  
               

@@ -3,7 +3,9 @@ import cat from "../images/cat.png"
 import calendar from "../images/calendar.png"
 import cover from "../images/cover.png"
 import portfolio from "../images/portfolio.png"
+import webdev from "../images/webdev.jpeg"
 import { devIcons } from "./Assets";
+
 
 
 
@@ -93,13 +95,33 @@ export const data = [
         repoUrl: "https://github.com/ManuelCappai94/prototipo"
     },
     {
+        _id: "Web_Dev_News",
+        title: "Web Deb News",
+        tecnologies: "Next.js",
+        icon: devIcons.next,
+        desc: "Next.js 16 learning project",
+        img: webdev,
+        version: "v.0.4",
+        demoUrl: "",
+        longDesc: "A learning-focused project built with Next.js 16 and TypeScript, featuring SSR, SSG, and data fetching from external and internal APIs. Created to modernize a legacy project and practice full-stack concepts. in development",
+        features: [
+            "SSR fetched from external APIs",
+            "SSG fetched from an internal API",
+            ],
+        howToUse: [
+            "Click on a post to view its details."
+            ],
+        repoUrl: "https://github.com/ManuelCappai94/Web_Dev_Next.js"
+    },
+    {
         _id: "My Portfolio",
         title: "My Portfolio",
         tecnologies: "React",
         icon: devIcons.react,
         desc: "This Portofolio, enjoy !",
         img: portfolio,
-        version: "v.1.0"
+        version: "v.1.0",
+        repoUrl: "https://github.com/ManuelCappai94/Portfolio"
     }
 ]
 

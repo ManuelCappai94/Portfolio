@@ -60,15 +60,22 @@
     border: none;
     scrollbar-width: none; 
     border-radius: 40px;
+    transform: scale(0.9);
     
 }
-    .prj-view.The_Omniscent_Cat{
-     
-         transform: scale(0.9);
-}
-    .prj-view.Calendar_Hub{ 
-        transform: scale(0.9);
+  .prj-view.Calendar_Hub{ 
+       
         height: 38rem; 
+}
+.prj-fallback{
+   display: flex;
+  justify-content: center;
+}
+.prj-fallback-image{
+ 
+  width: 90vi;
+  border-radius: 15px;
+  
 }
 /* .prj-view::-webkit-scrollbar {
   display: none;
@@ -233,7 +240,12 @@ summary {
      
         height: 55rem; 
 }
-
+.prj-fallback-image{
+ 
+  width: 90%;
+  border-radius: 15px;
+  
+}
  .desc-container {
 
     background-color: var(--bg-alt);

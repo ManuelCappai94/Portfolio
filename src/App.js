@@ -88,7 +88,7 @@ useEffect(() => {
 
 
   return (
-    <div className="App">
+    <div className="App" translate='no'>
       <Navbar scrollTo={scrollTo} changeTheme={changeTheme} theme={theme}/>
         <Routes>
           < Route path='/' element={<Home 

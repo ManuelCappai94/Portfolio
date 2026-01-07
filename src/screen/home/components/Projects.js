@@ -123,11 +123,12 @@ useEffect (() => {
 
 
 
-const Slide = ({ title, tecnologies,icon, desc, img, version, classes, _id}) => {
+const Slide = ({ title, tecnologies,icon, desc, img, version, classes, _id, repoUrl}) => {
     const navigate = useNavigate()
     const goToProject =  (_id) => {
         if(_id === "My Portfolio") {
-        window.scrollTo({top:0, behavior: "smooth"})
+            //apre un link esterno
+        window.open(repoUrl, "_blank")
         } else {
             navigate(`projectDetails/${_id}`)
         }
@@ -146,7 +147,7 @@ const Slide = ({ title, tecnologies,icon, desc, img, version, classes, _id}) => 
                   type='button'
                   className='view-btn'
                   onClick={()=> goToProject(_id)}
-                  > {_id === "My Portfolio"? "Scroll to Top": "View project"}</button>
+                  > {_id === "My Portfolio"? "View Repository": "View project"}</button>
                 <p className='v-slide'>{version}</p>
             </aside>
         </div>

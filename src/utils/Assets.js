@@ -73,7 +73,7 @@ export const mainSkills = [
    {
     id: v4(),
     title: "NextJs",
-    subtitle: "//In Progress",
+  
     icon: <RiNextjsFill style={{color: "rgba(0, 1, 42, 1)"}}/>
   },
   
@@ -112,8 +112,8 @@ export const additionalSkills = [
   },
        {
     id: v4(),
-    title: "Redux",
-    subtitle: "//In Progress",
+    title: "Redux Toolkit",
+    
     icon: <SiRedux style={{color: "rgba(68, 3, 87, 1)"}}/>
   },
 ]

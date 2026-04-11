@@ -4,12 +4,41 @@ import calendar from "../images/calendar.png"
 import cover from "../images/cover.png"
 import portfolio from "../images/portfolio.png"
 import webdev from "../images/webdev.jpeg"
+import shop from "../images/NextShop.png"
 import { devIcons } from "./Assets";
 
 
 
 
 export const data = [
+    {
+    _id: "NextStore",
+    title: "NextStore",
+    tecnologies: "Next.js",
+    icon: devIcons.next,
+    desc: "E-commerce application (WIP)",
+    img: shop,
+    version: "v.0.1",
+    demoUrl: "", 
+
+    longDesc: "NextStore is an e-commerce project built with Next.js to simulate a real-world online store. It currently includes a responsive homepage, reusable components, and external API integration. The project is being developed step by step, with the goal of expanding it into a full application by adding centralized state management with Redux and internal APIs using Next.js to simulate backend logic.",
+
+    features: [
+        "Responsive homepage layout",
+        "Reusable product cards",
+        "Hero section with highlighted products",
+        "External API integration (Axios)",
+        "Modular component structure"
+    ],
+
+    howToUse: [
+        "Browse products directly from the homepage",
+        "Scroll through product sections using navigation controls",
+        "Explore different product categories (in development)"
+    ],
+
+    repoUrl: "https://github.com/ManuelCappai94/NextStore"
+},
     {
         _id: "Calendar_Hub",
         title: "Calendar Hub",

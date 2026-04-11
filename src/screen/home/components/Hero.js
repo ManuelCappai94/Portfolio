@@ -8,13 +8,13 @@ const Hero = ({heroRef}) => {
       <div className='title-container'>
         <div className='titles'>
            
-            <h1>Web <br/><span style={{marginLeft: 30}}>Developer</span> </h1>
+            <h1>Frontend<br/><span >Developer</span> </h1>
         </div>
       </div>
       
       <article className='hero-article'>
         <p className='text-article'> 
-          <span className='commented'>{"[--Hi, I'm Manuel--]"}</span> <br/> <br/> <span className='highlighted'>Junior</span> Web Developer. <br/> <br/>
+          <span className='commented'>{"[--Hi, I'm Manuel--]"}</span> <br/> <br/> <span className='highlighted'>Junior</span> Frontend Developer. <br/> <br/>
            
            
             I'm passioanate about <span className='highlighted'> building</span>, <span className='highlighted'> learning</span>, and  <span className='highlighted'> improving</span>. <br/><br/> Welcome to <span className='highlighted'> My portfolio</span>.<br/> <span className='commented typewriter'>{'//feel free to explore.'}</span>

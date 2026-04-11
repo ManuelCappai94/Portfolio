@@ -77,10 +77,10 @@ useEffect (() => {
                             position = "active";
                         } else if (relativePosition === 1){
                             position= "next";
-                        } else if (relativePosition === 2 ){
-                            position = "last";
+                        } else if (relativePosition === slides.length -1 ){
+                            position = "prev";
                         } else {
-                            position = "prev"
+                            position = "last"
                         }
                         // console.log(active,  index, relativePosition)
                         

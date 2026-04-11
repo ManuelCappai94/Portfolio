@@ -163,18 +163,18 @@
 }
 
 .nav {
-  display: flex;
+  display: grid;
+  grid-template-columns:20% 80%  ;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  justify-content: space-around;
-  flex-direction: row;
+
   height: 4rem;
   
 }
 .nav-header {
 justify-content: left;
- width: 30%;
+ /* width: 30%; */
 }
 .nav-logo{
   width: 3rem;
@@ -186,6 +186,7 @@ justify-content: left;
   position: static; /* ritorno al position di default*/
   display: flex;
    flex-direction: row;
+   justify-content: space-between;
   height: auto;
   width: auto;
   background: none;

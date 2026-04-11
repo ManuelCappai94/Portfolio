@@ -47,18 +47,23 @@ return(
 export const mainSkills = [
   {
     id: v4(),
+    title: "React",
+    icon: <FaReact style={{color: "rgba(97, 218, 251, 1)"}}/>
+  },
+  {
+   id: v4(),
+   title: "NextJs",
+   icon: <RiNextjsFill style={{color: "rgba(0, 1, 42, 1)"}}/>
+ },
+  {
+    id: v4(),
     title: "JavaScript",
     icon: <FaJsSquare style={{color: "yellow", background:"black"}}/>
   },
   {
     id: v4(),
     title: "TypeScript",
-    icon: <SiTypescript style={{color: "blue", borderRadius: "5px"}}/>
-  },
-  {
-    id: v4(),
-    title: "React",
-    icon: <FaReact style={{color: "rgba(97, 218, 251, 1)"}}/>
+    icon: <SiTypescript style={{color:"rgb(75, 79, 187)", borderRadius: "5px"}}/>
   },
   {
     id: v4(),
@@ -68,15 +73,8 @@ export const mainSkills = [
   {
     id: v4(),
     title: "Css3",
-    icon: <FaCss3Alt style={{color: "rgba(42, 49, 240, 1)"}}/>
+    icon: <FaCss3Alt style={{color: "rgba(75, 79, 187)"}}/>
   },
-   {
-    id: v4(),
-    title: "NextJs",
-  
-    icon: <RiNextjsFill style={{color: "rgba(0, 1, 42, 1)"}}/>
-  },
-  
   // {
   //   id: v4(),
   //   title: "Node.js",
@@ -88,33 +86,30 @@ export const mainSkills = [
 export const additionalSkills = [
   {
     id: v4(),
+    title: "Redux Toolkit",
+    icon: <SiRedux style={{color: "rgba(68, 3, 87, 1)"}}/>
+  },
+  {
+    id: v4(),
     title: "Rest Api",
     subtitle: "//front-end",
     icon: <FaServer/>
   },
-{
+  {
+   id: v4(),
+   title: "Git",
+   icon: <FaGitAlt style={{color:"orange"}}/>
+ },
+ {
     id: v4(),
     title: "Npm",
     icon: <FaNpm style={{color:"rgba(0, 0, 0, 1)"}}/>
   },
 
-
-
   {
     id: v4(),
     title: "Git Hub",
     icon: <FaGithub style={{color: "rgba(68, 3, 87, 1)"}}/>
-  },
-   {
-    id: v4(),
-    title: "Git",
-    icon: <FaGitAlt style={{color:"orange"}}/>
-  },
-       {
-    id: v4(),
-    title: "Redux Toolkit",
-    
-    icon: <SiRedux style={{color: "rgba(68, 3, 87, 1)"}}/>
   },
 ]
 

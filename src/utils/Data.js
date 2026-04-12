@@ -14,14 +14,14 @@ export const data = [
     {
     _id: "NextStore",
     title: "NextStore",
-    tecnologies: "Next.js",
-    icon: devIcons.next,
+    tecnologies: ["Next.js", "TypeScript"],
+    icon: [devIcons.next, devIcons.ts],
     desc: "E-commerce application (WIP)",
     img: shop,
     version: "v.0.1",
     demoUrl: "", 
 
-    longDesc: "NextStore is an e-commerce project built with Next.js to simulate a real-world online store. It currently includes a responsive homepage, reusable components, and external API integration. The project is being developed step by step, with the goal of expanding it into a full application by adding centralized state management with Redux and internal APIs using Next.js to simulate backend logic.",
+    longDesc: "NextStore is an e-commerce application built with Next.js to simulate a real-world online store.The project currently includes a responsive homepage, reusable components, and external API integration for product data. It is being developed in structured phases, with a focus on scalability and real-world architecture.Future improvements include centralized state management with Redux, dynamic pages for products and categories, and internal APIs using Next.js to simulate backend logic.",
 
     features: [
         "Responsive homepage layout",
@@ -42,8 +42,8 @@ export const data = [
     {
         _id: "Calendar_Hub",
         title: "Calendar Hub",
-        tecnologies: "JavaScript",
-        icon: devIcons.js,
+        tecnologies: ["JavaScript"],
+        icon: [devIcons.js],
         desc: "Calendar and To-do-App",
         img: calendar ,
         version: "v.0.02", 
@@ -69,8 +69,8 @@ export const data = [
     {
         _id: "The_Omniscent_Cat",
         title: "The Omniscent Cat",
-        tecnologies: "TypeScript",
-        icon: devIcons.ts,
+        tecnologies: ["TypeScript", "Canvas API"],
+        icon: [devIcons.ts, devIcons.canvasAPI],
         desc: "Ask question and Play with the Cat",
         img: cat,
         version: "v.1.0",
@@ -92,13 +92,13 @@ export const data = [
     {
         _id: "Game_Prototype",
         title: "Game Prototype",
-        tecnologies: "JavaScript",
-        icon: devIcons.js,
+        tecnologies: ["JavaScript", "Canvas API", "Tiled"],
+        icon: [devIcons.js, devIcons.canvasAPI, devIcons.tiled],
         desc: "Demo developed with a Custom JS engine",
         img: cover,
         version: "v.0.02", 
         demoUrl: "https://gameprotoype.netlify.app/",
-        longDesc: "This game project, yes for now it doesn't have a name, was born because I wanted to learn how to use use JavaScript, doing what I love the most. But it is becoming bigger and bigger over time.",
+        longDesc: "This game project was born from my desire to learn JavaScript by building something I genuinely enjoy.It uses the Canvas API for 2D rendering with a multi-layered approach, along with Tiled, a widely used tool for creating tile-based maps and level design.",
         features: [
             "8-direction movement",
             "One enemy, with basic AI",
@@ -125,17 +125,21 @@ export const data = [
     },
     {
         _id: "Web_Dev_News",
-        title: "Web Deb News",
-        tecnologies: "Next.js",
-        icon: devIcons.next,
+        title: "Web Dev News",
+        tecnologies: [
+            "Next.js",
+            "TypeScript"
+            ], 
+        icon: [devIcons.next, devIcons.ts],
         desc: "Next.js 16 learning project",
         img: webdev,
-        version: "v.0.4",
-        demoUrl: "",
-        longDesc: "A learning-focused project built with Next.js 16 and TypeScript, featuring SSR, SSG, and data fetching from external and internal APIs. Created to modernize a legacy project and practice full-stack concepts. in development",
+        version: "v.1.0",
+        demoUrl: "https://web-dev-next-js-kappa.vercel.app/",
+        longDesc: "A learning-focused project built with Next.js 16 and TypeScript, featuring SSR, SSG, and data fetching from external and internal APIs. Created to modernize a legacy project and practice full-stack concepts.",
         features: [
-            "SSR fetched from external APIs",
-            "SSG fetched from an internal API",
+            "Navigation between pages",
+            "ISR, SSR, SSG types of fetch",
+            "Data fetched from an external and internal API",
             ],
         howToUse: [
             "Click on a post to view its details."
@@ -145,8 +149,8 @@ export const data = [
     {
         _id: "My Portfolio",
         title: "My Portfolio",
-        tecnologies: "React",
-        icon: devIcons.react,
+        tecnologies: ["React"],
+        icon: [devIcons.react],
         desc: "This Portofolio, enjoy !",
         img: portfolio,
         version: "v.1.0",

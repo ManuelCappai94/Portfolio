@@ -226,10 +226,16 @@ summary {
       font-size: 2rem;
     
     }
+    .prj-view-cont{
+      display: flex;
+   justify-content: center;
+}
     .prj-view{
         transform: scale(0.9);
+       
     
 }
+
     .prj-view.The_Omniscent_Cat{
       height: 50rem; 
 }
@@ -239,6 +245,11 @@ summary {
 .prj-view.Calendar_Hub{ 
      
         height: 55rem; 
+}
+.prj-view.Web_Dev_News{ 
+     
+        width: 80%; 
+
 }
 .prj-fallback-image{
  

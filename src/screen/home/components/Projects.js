@@ -140,7 +140,22 @@ const Slide = ({ title, tecnologies,icon, desc, img, version, classes, _id, repo
         </div>
         <div className='slides-desription'>
             <h3 className='h3-slide'>{title}</h3>
-            <h4 className='tecn-slide'>{tecnologies}  {icon}</h4>
+            <div className='tecn-slide'>
+                <ul className='tecn-slide-names'>
+                    {
+                        tecnologies.map(tec =>(
+                            <li key={title}>{tec}</li>
+                        ))
+                    }
+                </ul>
+                    <ul className='tecn-slide-icons'>
+                        {
+                            icon.map(i =>(
+                                <li key={title}>{i}</li>
+                            ))
+                        }
+                    </ul>
+            </div>
             <p className='desc-slide'>{desc}</p>
             <aside className='view-container'>
                 <button

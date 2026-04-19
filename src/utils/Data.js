@@ -42,29 +42,30 @@ export const data = [
     {
         _id: "Calendar_Hub",
         title: "Calendar Hub",
-        tecnologies: ["JavaScript"],
-        icon: [devIcons.js],
-        desc: "Calendar and To-do-App",
-        img: calendar ,
-        version: "v.0.02", 
+        tecnologies: ["JavaScript", "CSS", "Day.js"],
+        icon: [devIcons.js, devIcons.css],
+        desc: "Vanilla JS calendar with synchronized views",
+        img: calendar,
+        version: "v.0.5",
         demoUrl: "https://manuelcappai94.github.io/CalendarHub/",
-        longDesc: "My first project. With the Calendar I wanted to document my growth as a developer; in fact, on GitHub, in the branch 'versions', there are all the older versions that you can check freely. Even if this project is still incomplete and very raw, I am very proud of it because I developed it from scratch, and it is still growing!",
+        longDesc: "CalendarHub is a modular calendar application built from scratch with vanilla JavaScript. It is based on a centralized synchronization system that keeps month, week, and daily views aligned through a single source of truth. The project includes a mini calendar for quick navigation, a dynamic seasonal theme system, and the foundation of an event creation workflow through a dedicated modal. The architecture is designed to remain scalable and maintain a clear separation between UI and logic, making future expansions easier to implement.",
 
         features: [
-            "Complete Monthly View",
-            "Complete Weekly View",
-            "Complete Daily View",
-            "Custom Date Picker",
-            "Switchable Date Format (EN / ITA)"
+            "Synchronized Month, Week and Daily views",
+            "Centralized state management",
+            "Mini calendar for quick navigation",
+            "Event creation modal",
+            "Dynamic seasonal theme",
+            "Responsive layout"
         ],
         howToUse: [
-            "Choose a view by clicking its button",
-            "In the Monthly view, click on a day to update the current date",
-            "Switch between Months, Weeks, and Days using the arrows near the displayed date",
-            "The current date stays synchronized across all views",
-            "You can also select a custom date by clicking the monthly date display — this feature will be expanded in the next version"
+            "Select a view using the navigation buttons",
+            "Use arrows to move between dates",
+            "Click day numbers or headers to update the current date",
+            "Click cells or time slots to open the event modal",
+            "Use the mini calendar to jump to a specific date"
         ],
-        repoUrl:"https://github.com/ManuelCappai94/CalendarHub"
+        repoUrl: "https://github.com/ManuelCappai94/CalendarHub"
     },
     {
         _id: "The_Omniscent_Cat",
@@ -149,9 +150,9 @@ export const data = [
     {
         _id: "My Portfolio",
         title: "My Portfolio",
-        tecnologies: ["React"],
-        icon: [devIcons.react],
-        desc: "This Portofolio, enjoy !",
+        tecnologies: ["React", "CSS"],
+        icon: [devIcons.react, devIcons.css],
+        desc: "Personal portfolio built with React",
         img: portfolio,
         version: "v.1.0",
         repoUrl: "https://github.com/ManuelCappai94/Portfolio"

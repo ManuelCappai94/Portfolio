@@ -133,6 +133,7 @@ const Slide = ({ title, tecnologies,icon, desc, img, version, classes, _id, repo
             navigate(`projectDetails/${_id}`)
         }
     }
+    //ho usaato index come key perchè la lista è statica, non cambiando ordine non dovrei avere problemi
      return (
     <article className={`slide-article ${classes}`}>
         <div className='slide-img'>
@@ -143,15 +144,15 @@ const Slide = ({ title, tecnologies,icon, desc, img, version, classes, _id, repo
             <div className='tecn-slide'>
                 <ul className='tecn-slide-names'>
                     {
-                        tecnologies.map(tec =>(
-                            <li key={title}>{tec}</li>
+                        tecnologies.map((tec, index) =>(
+                            <li key={index}>{tec}</li>
                         ))
                     }
                 </ul>
                     <ul className='tecn-slide-icons'>
                         {
-                            icon.map(i =>(
-                                <li key={title}>{i}</li>
+                            icon.map((i, index) =>(
+                                <li key={index}>{i}</li>
                             ))
                         }
                     </ul>

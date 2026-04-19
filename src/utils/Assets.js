@@ -30,7 +30,8 @@ export const devIcons ={
   react: <FaReact className='dev-icons'/>,
   next: <SiNextdotjs className="dev-icons"/>,
   canvasAPI: <FaPaintBrush className="dev-icons"/>,
-  tiled: <BsGrid3X3Gap className="dev-icons"/>
+  tiled: <BsGrid3X3Gap className="dev-icons"/>,
+  css: <FaCss3Alt className="dev-icons"/>
 }
 
 const LinksMenu = ({isActive}) => {

@@ -16,25 +16,26 @@ export const data = [
     title: "NextStore",
     tecnologies: ["Next.js", "TypeScript"],
     icon: [devIcons.next, devIcons.ts],
-    desc: "E-commerce application (WIP)",
+    desc: "e-commerce with internal API",
     img: shop,
-    version: "v.0.1",
+    version: "v.0.5",
     demoUrl: "", 
 
-    longDesc: "NextStore is an e-commerce application built with Next.js to simulate a real-world online store.The project currently includes a responsive homepage, reusable components, and external API integration for product data. It is being developed in structured phases, with a focus on scalability and real-world architecture.Future improvements include centralized state management with Redux, dynamic pages for products and categories, and internal APIs using Next.js to simulate backend logic.",
+    longDesc: "NextStore is an e-commerce application built with Next.js to simulate a real-world online store. The project includes dynamic category pages, a complete product detail page, and integration with external APIs for product data. An internal API has been introduced to enhance and transform external data, allowing features such as enriched customer reviews with user information. The application is developed in structured phases with a focus on scalability, clean data flow, and real-world architecture.",
 
     features: [
-        "Responsive homepage layout",
-        "Reusable product cards",
-        "Hero section with highlighted products",
+         "Responsive homepage layout with hero section",
+        "Dynamic category pages",
+        "Product detail page with gallery, specifications and related products",
+        "Internal API for data enrichment (reviews + user data)",
         "External API integration (Axios)",
-        "Modular component structure"
+        "Reusable and modular component structure"
     ],
 
     howToUse: [
-        "Browse products directly from the homepage",
-        "Scroll through product sections using navigation controls",
-        "Explore different product categories (in development)"
+        "Browse products directly from the homepage or category pages",
+        "Navigate to product detail pages to view full information and reviews",
+        "Explore related products within each category",
     ],
 
     repoUrl: "https://github.com/ManuelCappai94/NextStore"

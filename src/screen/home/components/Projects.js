@@ -17,7 +17,7 @@ const Projects = ({projectsRef}) => {
    
    
 
-// Functional State, React garantisce che prev è l’ultimo valore reale dello stato. perchè react puo ritardare deli update, quindi questo garantisce che quello sia l'ultimo valore;
+// Functional State, React garantisce che prev è l’ultimo valore reale dello stato. perchè react puo ritardare degli update, quindi questo garantisce che quello sia l'ultimo valore;
 //useCallback invece mi garanisce che la funzione non venga creata ad ogni render, react mi stava avvertendo di questo. uso slides.length perchè non cambia mai in modo dinamico
     const nextSlide = useCallback(() => {
         setActive(prevValue => {

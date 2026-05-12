@@ -40,34 +40,37 @@ export const data = [
 
     repoUrl: "https://github.com/ManuelCappai94/NextStore"
 },
-    {
-        _id: "Calendar_Hub",
-        title: "Calendar Hub",
-        tecnologies: ["JavaScript", "CSS", "Day.js"],
-        icon: [devIcons.js, devIcons.css],
-        desc: "Vanilla JS calendar with synchronized views",
-        img: calendar,
-        version: "v.0.5",
-        demoUrl: "https://manuelcappai94.github.io/CalendarHub/",
-        longDesc: "CalendarHub is a modular calendar application built from scratch with vanilla JavaScript. It is based on a centralized synchronization system that keeps month, week, and daily views aligned through a single source of truth. The project includes a mini calendar for quick navigation, a dynamic seasonal theme system, and the foundation of an event creation workflow through a dedicated modal. The architecture is designed to remain scalable and maintain a clear separation between UI and logic, making future expansions easier to implement.",
+{
+    _id: "Calendar_Hub",
+    title: "Calendar Hub",
+    tecnologies: ["JavaScript", "CSS", "Day.js"],
+    icon: [devIcons.js, devIcons.css],
+    desc: "Advanced Vanilla JS scheduling system",
+    img: calendar,
+    version: "v.0.8",
+    demoUrl: "https://manuelcappai94.github.io/CalendarHub/",
+    longDesc: "CalendarHub is a modular calendar and scheduling application built from scratch with vanilla JavaScript. The project features synchronized month, week, and daily views, a runtime recurring event engine, an exception system for single occurrences, and contextual event management through a dedicated info banner. The architecture is based on centralized synchronization, dynamic rendering, and a clear separation between UI logic, event state, and recurring event generation.",
 
-        features: [
-            "Synchronized Month, Week and Daily views",
-            "Centralized state management",
-            "Mini calendar for quick navigation",
-            "Event creation modal",
-            "Dynamic seasonal theme",
-            "Responsive layout"
-        ],
-        howToUse: [
-            "Select a view using the navigation buttons",
-            "Use arrows to move between dates",
-            "Click day numbers or headers to update the current date",
-            "Click cells or time slots to open the event modal",
-            "Use the mini calendar to jump to a specific date"
-        ],
-        repoUrl: "https://github.com/ManuelCappai94/CalendarHub"
-    },
+    features: [
+        "Synchronized Month, Week and Daily views",
+        "Runtime recurring event engine",
+        "Single occurrence exception system",
+        "Edit and delete single events or entire series",
+        "Contextual info banner with dynamic actions",
+        "Event creation and editing modal",
+        "Mini calendar for quick navigation",
+        "Dynamic seasonal theme",
+        "Guided onboarding tutorial"
+    ],
+    howToUse: [
+        "Select a view using the navigation buttons",
+        "Use arrows or the mini calendar to navigate between dates",
+        "Click cells or time slots to create events with preloaded date and time",
+        "Create recurring events using daily, weekly, monthly or custom patterns",
+        "Click an existing event to open the info banner and manage single events or full series"
+    ],
+    repoUrl: "https://github.com/ManuelCappai94/CalendarHub"
+},
     {
         _id: "The_Omniscent_Cat",
         title: "The Omniscent Cat",

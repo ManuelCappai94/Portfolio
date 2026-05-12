@@ -101,7 +101,7 @@ useEffect(() => {
           <Route path='*' element={ErrorePage}/>
          
         </Routes>  
-         <footer>© 2025 Manuel</footer>
+         <footer>© 2026 Manuel</footer>
     </div>
   );
 }

@@ -31,7 +31,8 @@ export const devIcons ={
   next: <SiNextdotjs className="dev-icons"/>,
   canvasAPI: <FaPaintBrush className="dev-icons"/>,
   tiled: <BsGrid3X3Gap className="dev-icons"/>,
-  css: <FaCss3Alt className="dev-icons"/>
+  css: <FaCss3Alt className="dev-icons"/>,
+  redux: <SiRedux className="dev-icons"/>
 }
 
 const LinksMenu = ({isActive}) => {

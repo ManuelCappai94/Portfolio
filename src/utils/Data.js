@@ -14,28 +14,34 @@ export const data = [
     {
     _id: "NextStore",
     title: "NextStore",
-    tecnologies: ["Next.js", "TypeScript"],
-    icon: [devIcons.next, devIcons.ts],
-    desc: "e-commerce with internal API",
+    tecnologies: ["Next.js", "TypeScript", "Redux Toolkit"],
+    icon: [devIcons.next, devIcons.ts, devIcons.redux],
+    desc: "Full frontend e-commerce application",
     img: shop,
-    version: "v.0.5",
-    demoUrl: "", 
+    version: "v.1.0",
+    demoUrl: "https://next-store-theta-six.vercel.app/",
 
-    longDesc: "NextStore is an e-commerce application built with Next.js to simulate a real-world online store. The project includes dynamic category pages, a complete product detail page, and integration with external APIs for product data. An internal API has been introduced to enhance and transform external data, allowing features such as enriched customer reviews with user information. The application is developed in structured phases with a focus on scalability, clean data flow, and real-world architecture.",
+    longDesc:
+        "NextStore is a modern e-commerce application built with Next.js, TypeScript and Redux Toolkit to simulate a real-world online store architecture. The project includes dynamic product pages, advanced filtering systems, persistent cart and wishlist state, internal API routes for product data enrichment, and a mock checkout flow. The application was designed with a strong focus on scalable frontend architecture, reusable components, responsive UI, and realistic application flow.",
 
     features: [
-         "Responsive homepage layout with hero section",
-        "Dynamic category pages",
-        "Product detail page with gallery, specifications and related products",
-        "Internal API for data enrichment (reviews + user data)",
-        "External API integration (Axios)",
-        "Reusable and modular component structure"
+        "Dynamic product catalog and category pages",
+        "Advanced filtering and product search system",
+        "Persistent cart and wishlist with Redux Toolkit",
+        "Migration and transformation of external product data through internal Next.js API routes",
+        "Product data enrichment system with customized reviews and user information",
+        "Dynamic product detail pages with related products",
+        "Mock checkout flow with responsive layout",
+        "Reusable and modular component architecture",
+        "Responsive desktop and mobile UI"
     ],
 
     howToUse: [
-        "Browse products directly from the homepage or category pages",
-        "Navigate to product detail pages to view full information and reviews",
-        "Explore related products within each category",
+        "Browse products through categories or search",
+        "Use filters to sort and refine the product catalog",
+        "Add products to cart and wishlist with persistent local state",
+        "Open product pages to explore details and related items",
+        "Simulate a checkout process through the mock checkout flow"
     ],
 
     repoUrl: "https://github.com/ManuelCappai94/NextStore"

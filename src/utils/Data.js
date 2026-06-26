@@ -47,34 +47,42 @@ export const data = [
     repoUrl: "https://github.com/ManuelCappai94/NextStore"
 },
 {
-    _id: "Calendar_Hub",
+     _id: "Calendar_Hub",
     title: "Calendar Hub",
-    tecnologies: ["JavaScript", "CSS", "Day.js"],
+    tecnologies: ["JavaScript", "CSS", "Day.js", "Vite"],
     icon: [devIcons.js, devIcons.css],
-    desc: "Advanced Vanilla JS scheduling system",
+    desc: "Vanilla JS calendar, events and to-do system",
     img: calendar,
-    version: "v.0.8",
+    version: "v.0.9.1",
     demoUrl: "https://manuelcappai94.github.io/CalendarHub/",
-    longDesc: "CalendarHub is a modular calendar and scheduling application built from scratch with vanilla JavaScript. The project features synchronized month, week, and daily views, a runtime recurring event engine, an exception system for single occurrences, and contextual event management through a dedicated info banner. The architecture is based on centralized synchronization, dynamic rendering, and a clear separation between UI logic, event state, and recurring event generation.",
+    longDesc:
+        "CalendarHub is a modular calendar and productivity application built from scratch with vanilla JavaScript. The project combines synchronized month, week and day views with a recurring event engine, single-occurrence exceptions, contextual event management, seasonal themes, onboarding, and a date-based ToDo system. The latest version also migrates the project to an npm-managed Day.js and Vite workflow with GitHub Pages deployment, improving maintainability while preserving a custom vanilla JavaScript architecture.",
 
     features: [
-        "Synchronized Month, Week and Daily views",
+        "Synchronized Month, Week and Day views",
         "Runtime recurring event engine",
         "Single occurrence exception system",
-        "Edit and delete single events or entire series",
-        "Contextual info banner with dynamic actions",
+        "Edit and delete single events or entire recurring series",
+        "Contextual info banner with dynamic event actions",
         "Event creation and editing modal",
+        "Date-based ToDo list system with persistent localStorage state",
+        "ToDo badges and contextual menus inside calendar views",
         "Mini calendar for quick navigation",
         "Dynamic seasonal theme",
-        "Guided onboarding tutorial"
+        "Guided onboarding tutorial",
+        "npm-managed Day.js integration with Vite build setup",
+        "GitHub Pages deployment workflow"
     ],
+
     howToUse: [
-        "Select a view using the navigation buttons",
+        "Select Month, Week or Day view using the navigation buttons",
         "Use arrows or the mini calendar to navigate between dates",
         "Click cells or time slots to create events with preloaded date and time",
         "Create recurring events using daily, weekly, monthly or custom patterns",
-        "Click an existing event to open the info banner and manage single events or full series"
+        "Click an existing event to open the info banner and manage single events or full series",
+        "Create ToDo lists for specific dates and access them through calendar badges or contextual menus"
     ],
+
     repoUrl: "https://github.com/ManuelCappai94/CalendarHub"
 },
     {

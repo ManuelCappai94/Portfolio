@@ -3,7 +3,6 @@ import Home from './screen/home/Home';
 import ProjectDetails from './screen/projectDetails/ProjectDetails';
 import ErrorePage from './screen/ErrorePage';
 import { useRef, useEffect, useState, useCallback, useMemo } from 'react';
-
 import {  Route, Routes, useLocation } from 'react-router-dom';
 import "./styles/global.css"
 
@@ -17,8 +16,6 @@ function App() {
   const aboutRef = useRef(null)
   const location = useLocation()
 
-
-
   const getFromLocalStorage =() =>{
   if (localStorage.getItem("theme")){
     return localStorage.getItem("theme")
@@ -26,7 +23,6 @@ function App() {
   return "light-mode"
   }
   }
-
 
   const [theme, setTheme] = useState(getFromLocalStorage())
 
@@ -47,12 +43,6 @@ useEffect(()=>{
 }, [theme])
 
 
-// const scrollTo = {
-//   hero: () => heroRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }),
-//   projects: () => projectsRef.current?.scrollIntoView({ behavior: "smooth", block: "center"}),
-//   skills: () => skillRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }),
-//   about: () => aboutRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }),
-// };
 
 const scrollToHero = useCallback(() => {
   heroRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });

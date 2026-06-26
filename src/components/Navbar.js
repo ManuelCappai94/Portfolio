@@ -125,16 +125,16 @@ useEffect(()=>{
        <div className='social-icons-container'>
         <SocialIcons/>
        </div> 
-      <aside
-        ref={optionsRef} 
-        className={isOpen? 'options-menu show' : "options-menu"}>
-        <span className='options-text'>
-         {isOn? "Dark-mode: ": "Light-mode: " }
-          </span>
-        <button type='button' className='btn-theme' onClick={switchTheme}>
-          <OptionMenu isOn={isOn}/>
-        </button>
-      </aside>
+          <aside
+            ref={optionsRef} 
+            className={isOpen? 'options-menu show' : "options-menu"}>
+            <span className='options-text'>
+            {isOn? "Dark-mode: ": "Light-mode: " }
+              </span>
+            <button type='button' className='btn-theme' onClick={switchTheme}>
+              <OptionMenu isOn={isOn}/>
+            </button>
+          </aside>
           <button className="btn-toggler" onClick={()=> setIsOpen(prev => !prev)}>
             <LinksMenu isActive={isOpen}/>
         </button>

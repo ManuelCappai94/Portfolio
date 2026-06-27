@@ -1,43 +1,14 @@
 .prj-details{
  display: flex;
  flex-direction: column;
-  width: 100vi;
+  /* width: 100vi; */
   background-color: var(--bg-alt2);
    overflow: hidden;
    box-shadow: var(--dark-shadow);
-   /* height: fit-content; */
 }
-.header{
-    position: fixed;
-    top:5rem;
-    display: flex;
-    width: 100%;
-    align-items: center;
-    gap:2rem;
-    z-index: 30;
-    background-color: var(--bg-alt);
-    box-shadow: var(--dark-shadow);
-    opacity: 0.9;
-}
-.back-btn{
-  background: transparent;
-}
-.back-icon{
-    font-size: 3.5rem;
-    color: var(--text-muted);
-    transition: var(--btnTransition);
- 
-}
-.back-icon:hover{
-   transform: scale(1.02);
-    color: var(--keyword);
-}
-.back-arrow{
-  color: var(--text);
-  font-size: 0.8rem;
-}
+
 .single-prj-container{
-    margin: 10rem auto 1rem;
+   margin: 6rem auto 0;
   display: flex;
   flex-direction: column;
   gap: 1rem
@@ -48,9 +19,7 @@
    font-size: 1.5rem;
    color: var(--comment);
 }
-.tag-details{
-  color: var(--text-muted);
-}
+
 .prj-view-cont{
    position: relative;
 }
@@ -59,36 +28,21 @@
     height: 100vh;
     border: none;
     scrollbar-width: none; 
-    border-radius: 40px;
-    transform: scale(0.9);
-    
+    border-radius: 10px;
+     transform: scale(0.9);
 }
   .prj-view.Calendar_Hub{ 
-       
-        height: 38rem; 
+    height: 38rem; 
 }
 .prj-fallback{
    display: flex;
   justify-content: center;
 }
 .prj-fallback-image{
- 
   width: 90vi;
   border-radius: 15px;
-  
-}
-/* .prj-view::-webkit-scrollbar {
-  display: none;
-} */
-/* 
-.prj-view::-webkit-scrollbar-thumb {
-  background: var(--keyword);
-  border-radius: 10px;
 }
 
-.prj-view::-webkit-scrollbar-track {
-  background: transparent;
-} */
 .fullbtn {
     display: none;
 }
@@ -131,7 +85,7 @@
   font-size: clamp(.9rem, 2.2vw, 1rem);
   line-height: 1.6;
   color: var(--text-muted);
-   
+   padding: 0 1rem;
 }
 
 .features {
@@ -141,7 +95,7 @@
   padding-left: 1rem;
   border-bottom: 2px dashed var(--comment);
   border-top: 2px dashed var(--comment);
-  padding: 1.5rem;
+  padding: 2rem;
 }
 .features li:first-child{
   color: var(--string);
@@ -152,6 +106,7 @@
 .single-feature {
   margin-bottom: .4rem;
   font-size: clamp(.85rem, 2vw, .95rem);
+ 
 }
 .sido-info {
   margin-top: 1.5rem;
@@ -160,6 +115,7 @@
 .repo-url {
   color: var(--string);
   text-decoration: underline;
+  /* margin-bottom: 1rem; */
 }
 .version{
   color: var(--accent);
@@ -190,9 +146,6 @@ summary {
   outline: none;
 }
 
-
-
-
 .controls {
   margin-top: .7rem;
   list-style: "› ";
@@ -207,15 +160,12 @@ summary {
 
 
 @media screen and (min-width: 992px) {
-    .prj-details{
+  .prj-details{
       position: relative;
-        width: 100%;
-    }
-    .header{
-      top:4rem;
-      width: 18rem;
-   
-      border-radius: 0 0 15px 15px;
+      width: 100%;
+   }
+    .single-prj-container{
+      margin: 10rem auto 0;
     }
     details[open] {
    
@@ -224,22 +174,20 @@ summary {
     .project-title{
       
       font-size: 2rem;
-    
     }
     .prj-view-cont{
       display: flex;
    justify-content: center;
 }
     .prj-view{
-        transform: scale(0.9);
-       
-    
+      transform: none;
+       padding:1rem 5rem;  
 }
 
-    .prj-view.The_Omniscent_Cat{
+  .prj-view.The_Omniscent_Cat{
       height: 50rem; 
 }
-    .prj-view.Game_Prototype{
+  .prj-view.Game_Prototype{
         height: 45rem;     
 }
 .prj-view.Calendar_Hub{ 
@@ -277,11 +225,11 @@ summary {
 }
 
   .features {
-  margin-top: 0;
-  border-top: none;
-  border-bottom: none;
-  border-right: 2px dashed var(--comment);
-  padding-right: 4rem;
+    margin-top: 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: 2px dashed var(--comment);
+    padding-right: 4rem;
  }
 .features li:first-child{
   margin-bottom: 1rem;

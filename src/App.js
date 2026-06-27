@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Home from './screen/home/Home';
 import ProjectDetails from './screen/projectDetails/ProjectDetails';
 import ErrorePage from './screen/ErrorePage';
+import Footer from './components/Footer';
 import { useRef, useEffect, useState, useCallback, useMemo } from 'react';
 import {  Route, Routes, useLocation } from 'react-router-dom';
 import "./styles/global.css"
@@ -80,18 +81,19 @@ useEffect(() => {
   return (
     <div className="App" translate='no'>
       <Navbar scrollTo={scrollTo} changeTheme={changeTheme} theme={theme}/>
-        <Routes>
-          < Route path='/' element={<Home 
-              heroRef={heroRef}
-              projectsRef={projectsRef}
-              skillRef={ skillRef}
-              aboutRef={aboutRef}
-               />}/>
-          <Route path='/projectDetails/:id' element={<ProjectDetails />}/>
-          <Route path='*' element={ErrorePage}/>
-         
-        </Routes>  
-         <footer>© 2026 Manuel</footer>
+        <main className='main-page-content'>
+          <Routes>
+            < Route path='/' element={<Home 
+                heroRef={heroRef}
+                projectsRef={projectsRef}
+                skillRef={ skillRef}
+                aboutRef={aboutRef}
+                />}/>
+            <Route path='/projectDetails/:id' element={<ProjectDetails />}/>
+            <Route path='*' element={<ErrorePage/>}/>
+          </Routes>  
+        </main>
+      <Footer/>
     </div>
   );
 }

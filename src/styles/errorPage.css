@@ -1,0 +1,105 @@
+.error-page-content{
+    margin-top: 12rem;
+    padding: 2rem;
+}
+.error-page-content p {
+    font-size: 1.5em;
+}
+
+.animated-first, .animated-second, .animated-third{
+    font-size: 3rem;
+}
+
+.animated-first{
+    animation: spin ease 2s infinite;
+}
+
+.error-code {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: clamp(4rem, 12vw, 9rem);
+    font-weight: 800;
+    line-height: 1;
+    color: var(--string);
+    animation: error-code-float 3.5s ease-in-out infinite;
+}
+
+.error-digit {
+    display: inline-block;
+    transform-origin: center;
+    animation: error-digit-spin 3.5s ease-in-out infinite;
+}
+
+.error-digit:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.error-digit:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.error-digit:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+@keyframes error-code-float {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(8px, -8px);
+    }
+
+    50% {
+        transform: translate(0, 6px);
+    }
+
+    75% {
+        transform: translate(-8px, -4px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes error-digit-spin {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    12% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    22% {
+        transform: rotate(-12deg) scale(1.08);
+    }
+
+    32% {
+        transform: rotate(12deg) scale(1.08);
+    }
+
+    45% {
+        transform: rotate(360deg) scale(1);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .error-code,
+    .error-digit {
+        animation: none;
+    }
+}
+@media screen and (min-width:992px) {
+.error-page-content{
+    margin-top: 15rem;
+    padding: 2rem;
+}
+}

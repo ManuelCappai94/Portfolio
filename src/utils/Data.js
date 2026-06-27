@@ -133,7 +133,7 @@ export const data = [
             },
             {
                 title: "Interact",
-                keys: ["'E'"],
+                keys: ["'F'"],
             },
             {
                 title: "Attack",

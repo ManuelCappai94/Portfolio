@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=VT323&display=swap');
 
 :root {
-  /* da spostare appena programmo il tema */
- 
-/*shadow*/
    --light-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     --dark-shadow: 4px 5px 15px rgba(5, 6, 6, 0.4);
     /*global*/
@@ -45,8 +42,6 @@
   --gb-dpad: #1C1C1C;
 }
 
-
-
 .bar {
   position: relative;
   width: 50%;
@@ -73,21 +68,17 @@
   right: 0;
 }
 
-/*nel bodi mettero i colori da usare globalmente per dark mode*/
 
 body {
     font-family: "Fira Code", monospace; 
     overflow-x: hidden;
     background-color: var(--bg-alt2);
     margin: 0;
-
 }
 
 ul {
   list-style-type: none;
 }
-
-
 
 
 button {
@@ -97,7 +88,6 @@ button {
 }
  h1 {
     margin-top: 0;
-    /* padding-bottom: 4rem; */
    font-size: clamp(1.2rem, 4vw + 1rem, 3rem);
  }
  h2 {
@@ -108,7 +98,13 @@ button {
 h3 {
   margin:0;
 }
-
+.main-page-content {
+    width: 100%;
+   margin: 5rem 0 1rem;
+   min-height: 50dvh;
+   color: var(--text);
+   
+}
 .corner {
   position: absolute;
   width: 200px;
@@ -169,11 +165,7 @@ h3 {
   animation: scrollDot 2s infinite;
 }
 
-footer{
-  background: var(--bg);
-  color: var(--text);
 
-}
 @keyframes scrollAnim {
   0%, 100% {
     opacity: .25;
@@ -203,22 +195,21 @@ footer{
 
 @media screen and  (min-width: 992px){
   body{
-    max-width: 1200px;
      margin: 0 auto;
   }
-h1 {
-  margin-top: 0;
-  font-size: 52px;
-}
+  h1 {
+    margin-top: 0;
+    font-size: 52px;
+  }
 
-h2 {
-  font-size: 50px;
-}
-.corner {
-
-  width: 300px;
-}
-
-
-
+  h2 {
+    font-size: 50px;
+  }
+  .main-page-content {
+    margin: 4rem auto 0;
+    max-width: 1200px;
+  }
+  .corner {
+    width: 300px;
+  }
 }

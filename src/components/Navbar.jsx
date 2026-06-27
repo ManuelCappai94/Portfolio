@@ -91,59 +91,88 @@ useEffect(()=>{
   }
  
   return (
-<nav className='nav'>
-    <header className='nav-header'>
+<header className='header-container'>
+  <div className="header-inner">
+    <div className='header-content-mobile'>
    
-      <div className='nav-logo'> 
-        <h4 className='logo-text'>M.C</h4> 
-      </div>
-        <button className="btn nav-toggler" onClick={()=> openMenu()}>
+      <button
+        className='nav-logo'
+        type="button"
+        onClick={()=> handleClick("hero")}
+        aria-label="Go to homepage"
+      > 
+        <span className="logo-text">M.C</span>
+      </button>
+      <button
+          type="button"
+          className="btn nav-toggler"
+          onClick={()=> openMenu()}
+          aria-label={isActive? "Close main navigation" : "Open main navigation"}
+          aria-expanded={isActive}
+          aria-controls="main-navigation-menu"
+          >
             <LinksMenu isActive={isActive}/>
         </button>
-      </header>
-<section
-  ref={containerRef}
-   className={isActive? 'links-container show ' : 'links-container ' }>
+    </div>
+
+    <div
+      id="main-navigation-menu"
+      ref={containerRef}
+      className={isActive? 'links-container show ' : 'links-container ' }
+      >
+      <nav className="main-navigation" aria-label="Main navigation">
         <ul className='nav-links'>
-          <li style={{marginTop: 6, marginRight: 0}}>{tagIcons.openTag}</li>
-             {
-        links.map((el)=>{
-            return (
-                <li key={el.id} >
-                    <button  type='button' onClick={()=>handleClick(el.target)}>
-                   <span className='button-text'>
-                   {el.icon} {el.text}
-                   </span>
-                    </button>
-                </li>
-            )
-        })
-      }
-      <li style={{marginTop: 6, marginLeft: 0}}>{tagIcons.closeTag}</li>
+            <li style={{marginTop: 6, marginRight: 0}} aria-hidden="true">{tagIcons.openTag}</li>
+              {
+                links.map((el)=>{
+                  return (
+                    <li key={el.id} >
+                      <button  type='button' onClick={()=>handleClick(el.target)}>
+                        <span className='button-text'>
+                          {el.icon} {el.text}
+                        </span>
+                      </button>
+                  </li>
+              )
+            })
+          }
+            <li style={{marginTop: 6, marginLeft: 0}} aria-hidden="true">{tagIcons.closeTag}</li>
         </ul>
-    
-       <div className='social-icons-container'>
+      </nav>
+
+      <div className='social-icons-container'>
         <SocialIcons/>
-       </div> 
-          <aside
-            ref={optionsRef} 
-            className={isOpen? 'options-menu show' : "options-menu"}>
+      </div> 
+        <div
+          id="open-option-menu"
+          ref={optionsRef} 
+          className={isOpen? 'options-menu show' : "options-menu"}
+          >
             <span className='options-text'>
             {isOn? "Dark-mode: ": "Light-mode: " }
-              </span>
-            <button type='button' className='btn-theme' onClick={switchTheme}>
+            </span>
+            <button 
+              type='button'
+              className='btn-theme'
+              onClick={switchTheme}
+              aria-label={isOn ? "Switch to light mode" : "Switch to dark mode"}
+              >
               <OptionMenu isOn={isOn}/>
             </button>
-          </aside>
-          <button className="btn-toggler" onClick={()=> setIsOpen(prev => !prev)}>
-            <LinksMenu isActive={isOpen}/>
+        </div>
+        <button 
+          className="btn-toggler"
+          onClick={()=> setIsOpen(prev => !prev)}
+          type='button'
+          aria-label={isOpen? "Close theme options" : "Open theme options"}
+          aria-expanded={isOpen}
+          aria-controls="open-option-menu"
+           >
+              <LinksMenu isActive={isOpen}/>
         </button>
-    </section>
-    
-    
- 
-</nav>
-
+      </div>
+  </div>
+</header>
   )
 }
 

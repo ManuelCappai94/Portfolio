@@ -15,7 +15,6 @@ const Projects = ({projectsRef}) => {
     //sperimento con il touch
     const [touchStart, setTouchStart] = useState(0)
    
-   
 
 // Functional State, React garantisce che prev è l’ultimo valore reale dello stato. perchè react puo ritardare degli update, quindi questo garantisce che quello sia l'ultimo valore;
 //useCallback invece mi garanisce che la funzione non venga creata ad ogni render, react mi stava avvertendo di questo. uso slides.length perchè non cambia mai in modo dinamico
@@ -36,7 +35,7 @@ const Projects = ({projectsRef}) => {
         const finalX = e.changedTouches[0].clientX;
                 const distance = finalX - touchStart
                
-        if(distance > -50 && distance < 50) return console.log("ciao")
+        if(distance > -50 && distance < 50) return 
           if( distance < 50) {
             nextSlide()
           } else if (distance > 50){
@@ -127,8 +126,7 @@ const Slide = ({ title, tecnologies,icon, desc, img, version, classes, _id, repo
     const navigate = useNavigate()
     const goToProject =  (_id) => {
         if(_id === "My Portfolio") {
-            //apre un link esterno
-        window.open(repoUrl, "_blank")
+            window.open(repoUrl, "_blank", "noopener,noreferrer")
         } else {
             navigate(`projectDetails/${_id}`)
         }

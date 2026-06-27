@@ -27,8 +27,7 @@ const [isfullScreen, setIsFullscreen] = useState(false)
 
   return (
    <article className='single-prj-container'>
-              <h1 className='project-title'><span className='tag-details'>&lt;</span>{title}<span className='tag-details'>/&gt;</span></h1>
-              <ProjectExtras controls={controls} howToUse={howToUse}/>
+              
               <div className='prj-view-cont' ref={contRef}>
                 { demoUrl? (
                    <iframe 
@@ -48,6 +47,7 @@ const [isfullScreen, setIsFullscreen] = useState(false)
               </div>  
               
               <div className='desc-container'>
+                <ProjectExtras controls={controls} howToUse={howToUse}/>
                     <h5 className='desc-title'>!Description</h5>
                   <p className='long-desc'>{longDesc}</p>
                   <div className='coloums'>

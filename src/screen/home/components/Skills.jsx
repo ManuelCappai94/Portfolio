@@ -1,5 +1,5 @@
 
-import { mainSkills, additionalSkills } from '../../../utils/Assets'
+import { mainSkills, additionalSkills } from '../../../data/uiData'
 import "../../../styles/skills.css"
 
 

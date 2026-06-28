@@ -116,7 +116,7 @@ h3 {
 }
 
 .corner-top-left {
-  top: 5rem;
+  top: 1rem;
   left: 0;
   transform: rotate(180deg) skew(-30deg);
 }
@@ -212,4 +212,7 @@ h3 {
   .corner {
     width: 300px;
   }
+  .corner-top-left {
+  top: 3rem;
+}
 }

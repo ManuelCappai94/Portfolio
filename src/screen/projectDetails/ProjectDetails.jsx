@@ -1,6 +1,6 @@
 
 import { useParams, useNavigate } from 'react-router-dom'
-import { data } from '../../utils/Data'
+import { data } from '../../data/Data'
 import "../../styles/projectDetails.css"
 import ProjectDescription from './components/ProjectDescription';
 import InnerPageHeader from '../../components/InnerPageHeader';

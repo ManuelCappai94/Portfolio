@@ -6,111 +6,116 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100dvi;
-  height: 4rem;
+  width: 100%;
   box-shadow: var(--dark-shadow);
   background-color: var(--bg);
   z-index: 999;
-  opacity: 0.9;
+  opacity: 1;
   height: 5rem;
 }
 .header-inner{
+  width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
 }
 
 .header-content-mobile{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 999;
   height: 5rem;
 }
 .nav-logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
-  margin-left: 2rem;
-  border: 7px solid black;
+ 
+  margin-left: 1rem;
+  border: 6px solid var(--text);
   font-family: "VT323", monospace;
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50px;
-  background-color: var(--string);
+  background-color: var(--bg-alt);
   box-shadow: var(--dark-shadow);
   font-size: 2.8rem;
-  color: black;
+  color: var(--text);
 }
 .logo-text{
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 
 .btn {
   display: inline-block;
   color: var(--text);
 }
- .nav-toggler{
+
+.nav-toggler{
     font-size: 3rem;
   background: transparent;
-  }
+}
+
+
 .social-icons{
   display: flex;
-  justify-content: flex-start;
-  width: 80%;
-  gap: 1rem
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  margin: 0;
+  border-top: 1px dashed var(--text);
+  border-bottom: 1px dashed var(--text);
 }
-  .social-icon {
-    width: 1.5rem;
-    height: 1.5rem;
+
+.social-icon {
+    font-size: 1.7rem;
     color: var(--string);
-  }
+    /* display: flex; */
+}
+
 .social-icon:active{
   color: var(--highlight);
 }
 
-
-  .links-container{
+.links-container{
     position: fixed;
     top: 6rem;
     right: -100%;
+
     height: fit-content;
     width: 270px;
+    padding: 1rem;
+
     background: var(--bg);
     display: flex;
     flex-direction: column;
     gap:1rem;
+
     transition: var(--transition);
     z-index: 999;
     border-radius: 20px;
-    /* border: 3px solid black; */
     box-shadow: var(--dark-shadow);
-  }
+    pointer-events: none;
+}
+
   .links-container.show {
    right: 0;
-
+   pointer-events: all;
   }
 
   .nav-links {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-   padding-left: 5px;;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-left: 5px;
 }
 
-.nav-links *{
+.nav-links button{
+  width: 100%;
   background: transparent;
   font-family: "Fira Code", monospace;
-  width: 10rem;
   font-size:clamp(1.2rem, 1.4rem, 1.6rem);
-  align-items: left;
-  /* color: var(--string); */
-   
 }
-
-.nav-links li:last-child, .nav-links li:first-child {
-  padding-left: 1rem;
-}
-
 
 
 .icons {
@@ -158,154 +163,126 @@
 }
 
 @media screen and (min-width: 992px) {
-.btn-toggler{
-  display: block;
-}
+
 .header-container {
   width: 100%;
-  height: 4rem;
+  height: 6rem;
 }
 
 .header-inner{
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
+  padding: 0;
+  gap: 2rem;
 }
 .nav-logo{
-  width: 3rem;
-  height: 3rem;
-    font-size: 2rem;
-  border: 4px solid black;
-}
-
-.header-content-mobile {
-  justify-content: left;
+  width: 4rem;
   height: 4rem;
+
+  border: 4px solid var(--text);
 }
-#main-navigation-menu{
-  flex: 1;
-}
-/* .main-navigation {
-  flex: 1;
-} */
-.links-container{
-  position: static; /* ritorno al position di default*/
-  display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-  height: auto;
-  width: auto;
-  background: none;
-   border: none;
-   box-shadow: none;
- 
-}
-.links-container.show{
-display: flex;
-flex-direction: row;
- transform: translateY(0);
-}
-.nav-links {
-  display: grid;
-  grid-template-columns: repeat(6, auto);
-  gap: 1rem;
-  padding: 0;
-}
-.nav-icons {
-  display: none !important;
+.logo-text {
+    font-size: 2rem;
 }
 
-
-.nav-links *{
-  display: flex;
-  justify-content: center;
-  background: transparent;
-  margin: auto;
-  font-family: "Fira Code", monospace;
-  font-size: 1.2rem;
-  width: 6rem;
-}
-.nav-links li:hover {
-  transform: scale(1.1);
- 
-}
-.nav-links li:last-child{
-  justify-content: left;
-  padding: 0;
-  transform: scale(1);
-}
-.nav-links li:first-child{
-  justify-content: right;
-  padding: 0;
-  transform: scale(1);
-}
-
-
- /* .icons {
-  display: block;
-  width: 2rem ;
-  height: 1.5rem;
-} */
-
-  .nav-toggler {
+.nav-toggler {
   display: none;
 }
- 
-.social-icons {
+
+.links-container{
+  position: relative; 
+  top: auto;
+  right: auto;
+
+  height: 100%;
+  flex: 1;
+
   display: flex;
+  justify-content: space-between;
   flex-direction: row;
- padding-left: 0;
-  gap: 1rem
+ 
+  width: auto;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  pointer-events: all;
+  padding: 0;
+}
+.links-container.show{
+  right: auto;
+}
+ .main-navigation {
+  flex: 1;
+  display: flex;
+  align-items: center;
+ 
+  }
+
+.nav-links {
+  flex-direction: row;
+  gap: 2rem;
+  /* padding: 0; */
+}
+
+.nav-icons {
+  display: none;
+}
+
+.nav-links li:hover {
+  transform: scale(1.08);
+ 
+}
+
+.social-icons {
+  flex-direction: row;
+  gap: 1rem;
+  border: none;
+  margin: 1rem;
 }
 
 .social-icon {
-  width: 1.5rem ;
-  height: 1.5rem;
-  /* padding-right: 5rem;*/
+  width: 1.8rem ;
+  height: 1.8rem;
   padding-left: 0;
-}
-.social-icon:hover{
-  transform: scale(1.1);
-}
-
-
-.options-menu {
-   position: absolute;
-    top: 4rem;
-    right: -200%;
-    height: fit-content;
-    width: 13rem;
-    background: var(--bg);
-    display: flex;
-    flex-direction: row;
-    gap:1em;
-    opacity: 0.9;
-    border-radius: 0 0  10px 10px;
-    box-shadow: var(--dark-shadow);
-  
-}
-
-.options-menu.show {
-   right: 0;
-}
-.btn-theme {
-  display: flex ;
-  background: transparent;
-  font-size: 3rem;
-
-}
-.options-text{
-  color: var(--text);
-  font-size: 1rem;
+  display: flex;
  
 }
-
+.social-icon:hover{
+  transform: scale(1.08);
+}
 
 .btn-toggler{
+  display: block;
   font-size: 2rem;
   background: transparent;
   color: var(--text);
 }
 
+.options-menu {
+  position: absolute;
+  top: 6rem;
+  right: -200%;
+  height: fit-content;
+  width: 13rem;
+  background: var(--bg);
+  opacity: 0;
+  border-radius: 0 0  10px 10px;
+  box-shadow: var(--dark-shadow);
+  pointer-events: none;
+}
+
+.options-menu.show {
+   right: 0;
+   opacity: 0.9;
+   pointer-events: all;
+}
+
+.btn-theme {
+   font-size: 3rem;
+}
+
+.options-text{
+  font-size: 1rem;
+}
 }

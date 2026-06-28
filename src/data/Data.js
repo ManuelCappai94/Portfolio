@@ -5,7 +5,7 @@ import cover from "../images/cover.png"
 import portfolio from "../images/portfolio.png"
 import webdev from "../images/webdev.jpeg"
 import shop from "../images/NextShop.png"
-import { devIcons } from "./Assets";
+import { devIcons } from "./uiData";
 
 
 

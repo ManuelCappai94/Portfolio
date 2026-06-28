@@ -1,8 +1,8 @@
 import {useState, useEffect, useCallback} from 'react'
-import { data } from '../../../utils/Data'
+import { data } from '../../../data/Data'
 import fallBackImg from "../../../images/fallBack.png"
 import { FaCircle } from "react-icons/fa6";
-import { arrows } from '../../../utils/Assets';
+import { GrNext, GrPrevious } from "react-icons/gr";
 import { useNavigate } from 'react-router-dom';
 import "../../../styles/projects.css"
 
@@ -10,14 +10,11 @@ import "../../../styles/projects.css"
 
 
 const Projects = ({projectsRef}) => {
-    const slides = data //non serve lo useState qua, non c'è nessun nuovo render, sono dati statici
+    const slides = data
     const [active, setActive] = useState(0)
-    //sperimento con il touch
+ 
     const [touchStart, setTouchStart] = useState(0)
    
-
-// Functional State, React garantisce che prev è l’ultimo valore reale dello stato. perchè react puo ritardare degli update, quindi questo garantisce che quello sia l'ultimo valore;
-//useCallback invece mi garanisce che la funzione non venga creata ad ogni render, react mi stava avvertendo di questo. uso slides.length perchè non cambia mai in modo dinamico
     const nextSlide = useCallback(() => {
         setActive(prevValue => {
             if ( prevValue >= slides.length - 1) return 0
@@ -81,8 +78,6 @@ useEffect (() => {
                         } else {
                             position = "last"
                         }
-                        // console.log(active,  index, relativePosition)
-                        
                         return <Slide key={slide._id} {...slide} classes={position}/>
                     })
                 }
@@ -100,10 +95,10 @@ useEffect (() => {
 
         <aside className='btn-container'>
             <button className='btn-prev' type='button'  onClick={prevSlide}>
-                {arrows.prev}
+                <GrPrevious/>
             </button>
             <button className='btn-next' onClick={nextSlide}>
-                {arrows.next}
+                <GrNext/>
             </button>
         </aside>
             </div>
@@ -113,10 +108,7 @@ useEffect (() => {
           <span className="mouse-icon"></span>
         </div>
     </section>
-     
-     
-     
-      </>
+    </>
   )
 }
 

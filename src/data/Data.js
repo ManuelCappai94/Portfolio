@@ -172,7 +172,7 @@ export const data = [
         icon: [devIcons.react, devIcons.css],
         desc: "Personal portfolio built with React",
         img: portfolio,
-        version: "v.1.0",
+        version: "v.1.2",
         repoUrl: "https://github.com/ManuelCappai94/Portfolio"
     }
 ]

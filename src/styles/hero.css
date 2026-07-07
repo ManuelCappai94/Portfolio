@@ -7,8 +7,8 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  box-shadow: var(--dark-shadow);
-  background-color: var(--bg-alt2);
+  /* box-shadow: var(--dark-shadow); */
+  background: var(--background-gradient);
   overflow: hidden;
    /* padding: 0 3rem; */
 }
@@ -74,7 +74,7 @@
   /* max-width: 1200px; */
   height: 50rem;
   margin: 0 auto;
-  box-shadow: var(--dark-shadow);
+  /* box-shadow: var(--dark-shadow); */
 }
 .title-container {
   position: relative;

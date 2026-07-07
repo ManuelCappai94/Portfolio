@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState} from 'react'
 import SocialIcons from './SocialIcons'
 import "../styles/navbar.css"
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate, useLocation, Link } from 'react-router-dom'
 import { MdOutlineApps } from "react-icons/md";
 import {  FaCodeBranch, FaInfo } from "react-icons/fa";
 import { SlOptions, SlOptionsVertical } from "react-icons/sl";
 import { LiaToggleOffSolid, LiaToggleOnSolid } from "react-icons/lia";
+import { IoBagSharp } from "react-icons/io5";
 
 
 
@@ -135,6 +136,13 @@ const Navbar = ({ scrollTo, changeTheme, theme }) => {
                   </li>
                 );
               })}
+              <li>
+                <Link
+                 to={"/experience"}
+                  className='nav-link'>
+                    <span className='button-text'><IoBagSharp className='nav-icons'/>{"Experience"}</span>
+                </Link>
+              </li>
             </ul>
           </nav>
 

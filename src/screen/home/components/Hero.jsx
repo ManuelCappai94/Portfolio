@@ -1,4 +1,3 @@
-
 import "../../../styles/hero.css"
 
 const Hero = ({heroRef}) => {
@@ -14,9 +13,11 @@ const Hero = ({heroRef}) => {
       
       <article className='hero-article'>
         <p className='text-article'> 
-          <span className='commented'>{"[--Hi, I'm Manuel--]"}</span> <br/> <br/> <span className='highlighted'>Junior</span> Frontend Developer. <br/> <br/>
-            I'm passioanate about <span className='highlighted'> building</span>, <span className='highlighted'> learning</span>, and  <span className='highlighted'> improving</span>. <br/><br/> Welcome to <span className='highlighted'> My portfolio</span>.<br/> <span className='commented typewriter'>{'//feel free to explore.'}</span>
-          
+          <span className='commented'>{"[--Hi, I'm Manuel--]"}</span> <br/> <br/>
+           <span className='highlighted'>Junior</span> Frontend Developer. <br/> <br/>
+            I'm passioanate about <span className='highlighted'> building</span>, <span className='highlighted'> learning</span>, and  <span className='highlighted'> improving</span>. <br/><br/>
+             Welcome to <span className='highlighted'> My portfolio</span>.<br/>
+              <span className='commented typewriter'>{'//feel free to explore.'}</span>
         </p>
       </article>
 

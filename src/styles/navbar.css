@@ -7,7 +7,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  box-shadow: var(--dark-shadow);
+  /* box-shadow: var(--dark-shadow); */
   background-color: var(--bg);
   z-index: 999;
   opacity: 1;
@@ -110,13 +110,16 @@
     padding-left: 5px;
 }
 
-.nav-links button{
+.nav-links button, .nav-link{
   width: 100%;
   background: transparent;
   font-family: "Fira Code", monospace;
   font-size:clamp(1.2rem, 1.4rem, 1.6rem);
 }
 
+.nav-link{
+  text-decoration: none;
+}
 
 .icons {
  width: 36px;

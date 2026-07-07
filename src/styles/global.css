@@ -3,10 +3,17 @@
 :root {
    --light-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     --dark-shadow: 4px 5px 15px rgba(5, 6, 6, 0.4);
-    /*global*/
     --transition: all 0.2s ease;
     --slideTransition: all 0.5s ease;
     --btnTransition: all 0.125s ease;
+    --background-gradient: linear-gradient(
+    90deg,
+    transparent,
+    var(--bg-alt) 15%,
+    var(--bg-alt) 85%,
+    transparent
+  );
+
 }
 
 :root.dark-mode {
@@ -25,11 +32,10 @@
   --gb-dpad: #1C1C1C;
 }
 
-/* Light theme */
 :root.light-mode {
   --bg: #FFFFFF;
-  --bg-alt: #F3F3F3;
-  --bg-alt2: #cec8c8f8;
+  --bg-alt: #fffbfb;
+  --bg-alt2: #f3f2f2f8;
   --bg-slide:#1f1e1e;
   --bg-skill:#131212d7;
   --accent: #0064B0;
@@ -58,7 +64,7 @@
   transform: translateY(-50%);
   width: 10px;
   height: 10px;
-  background: black; /* colore del pallino */
+  background: black; 
   border-radius: 50%;
 }
 .bar::before {
@@ -79,6 +85,7 @@ body {
 ul {
   list-style-type: none;
 }
+
 
 
 button {

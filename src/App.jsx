@@ -3,6 +3,8 @@ import Home from './screen/home/Home';
 import ProjectDetails from './screen/projectDetails/ProjectDetails';
 import ErrorePage from './screen/ErrorePage';
 import Footer from './components/Footer';
+import Experience from './screen/experience/Experience';
+import ExperiencePageLayout from './screen/experience/components/ExperiencePageLayout';
 import { useRef, useEffect, useState, useCallback, useMemo } from 'react';
 import {  Route, Routes, useLocation } from 'react-router-dom';
 import "./styles/global.css"
@@ -90,6 +92,8 @@ useEffect(() => {
                 aboutRef={aboutRef}
                 />}/>
             <Route path='/projectDetails/:id' element={<ProjectDetails />}/>
+            <Route path='/experience' element={<Experience/>}></Route>
+            <Route path="/experience/:id" element={<ExperiencePageLayout/>}></Route>
             <Route path='*' element={<ErrorePage/>}/>
           </Routes>  
         </main>

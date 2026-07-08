@@ -1,6 +1,6 @@
-
+import { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom'
-import { data } from '../../data/Data'
+import { data } from '../../data/projectsPageData'
 import "../../styles/projectDetails.css"
 import ProjectDescription from './components/ProjectDescription';
 import InnerPageHeader from '../../components/InnerPageHeader';
@@ -16,6 +16,14 @@ const ProjectDetails = () => {
       state: {scrollTo: "projects"}
     } )
   }
+
+    useEffect(()=>{
+      window.scrollTo({
+        top: 0,
+        left:0,
+        behavior: "auto"
+      })
+    }, [id])
   
   if(!project){
     return <ErrorePage/>

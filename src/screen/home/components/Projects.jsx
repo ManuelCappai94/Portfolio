@@ -1,5 +1,5 @@
 import {useState, useEffect, useCallback} from 'react'
-import { data } from '../../../data/Data'
+import { data } from '../../../data/projectsPageData'
 import fallBackImg from "../../../images/fallBack.png"
 import { FaCircle } from "react-icons/fa6";
 import { GrNext, GrPrevious } from "react-icons/gr";

@@ -1,9 +1,18 @@
 import "../../../styles/experienceDetailsPage.css"
-import companyLogo from "../../../images/Mayerfeld-Consulting-logo-profile.jpg" 
-import finalScore from "../../../images/final-score-review-screenshot.jpeg" 
-import {workItems, outcomes} from "../../../data/experienceData"
 
-const ExperienceContent = () => {
+const ExperienceContent = (
+  {
+    id,
+    title,
+    date,
+    companyLogo,
+    companyLogoAlt,
+    overview,
+    selectedWork,
+    outcomes
+  }
+) => {
+
   return (
     <article className='article-layout'>
 
@@ -12,46 +21,39 @@ const ExperienceContent = () => {
         aria-labelledby="company-name"
       >
         <header className="company-title">
-            <img className="company-logo" src={companyLogo} alt="Mayerfeld logo"></img>
-            <h3 id="company-name"> Mayerfeld Consulting Practicum</h3>
+            <img className="company-logo" src={companyLogo} alt={companyLogoAlt}></img>
+            <h3 id="company-name"> {title}</h3>
         </header>
-        <time className="experience-date">June 2026 – July 2026</time>
+        <time className="experience-date">{date}</time>
       </section>
 
       <section
          className="experience-overview"
          aria-labelledby="overview-title"
          >
-        <div className="overview-heading">
-            <h3 id="overview-title">Experience Overview</h3>
+          <header className="overview-header">
+            <p className="section-label">{overview.label}</p>
+            <h3 id="overview-title">{overview.title}</h3>
+          </header>
+        <div className="overview-layout">
+          <figure>
+              <img 
+                  src={overview.image}
+                  alt={overview.imageAlt}
+                  className="overview-image"
+                  />
+              <figcaption>
+                  {overview.imageCaption}
+              </figcaption>
+          </figure>
+        <div className="overview-text">
+          {overview.paragraphs.map((paragraph, index) => (
+            <p key={`${id}-overview-${index}`}>
+              {paragraph}
+            </p>
+          ))}
         </div>
-        <figure>
-            <img 
-                src={finalScore}
-                 alt="screenshot of FinalScoreReview WebSite"
-                 className="overview-image"
-                 />
-            <figcaption>
-                Hero of FinalScoreReviews, developed during the Practicum
-            </figcaption>
-        </figure>
-        <p>
-            The Mayerfeld Consulting Frontend Practicum was a project-based programme
-            built around weekly assignments, teamwork, presentations, and code reviews.
-            It placed strong emphasis on semantic HTML, accessibility, clean and
-            maintainable code, and delivering working projects within defined deadlines.
-            <br />
-            <br />
-            The programme also introduced security concerns such as prompt injection and
-            possible mitigation strategies, while giving me practical experience with
-            shared Git workflows, task coordination, conflict resolution, debugging, and
-            improving code produced within a team.
-            <br />
-            <br />
-            It also included an introduction to AI-assisted development through Vercel
-            v0, covering its workflow, different prompting approaches, and how the
-            platform turns requirements into generated interfaces and application code.
-        </p>
+        </div>
       </section>
 
       <section 
@@ -59,21 +61,19 @@ const ExperienceContent = () => {
         aria-labelledby="experience-work-title"
         >
         <header className="experience-work-heading">
-          <p className="section-label">Selected work</p>
+          <p className="section-label">{selectedWork.label}</p>
 
           <h3 id="experience-work-title">
-            Projects completed during the practicum
+            {selectedWork.title}
           </h3>
 
           <p>
-            Six assignments covering semantic HTML, responsive design,
-            JavaScript logic, DOM interaction, teamwork, and browser-based game
-            development.
+            {selectedWork.description}
           </p>
         </header>
         <div className="experience-work-list">
         {
-            workItems.map((item)=>{
+            selectedWork.items.map((item)=>{
                 const workTitleId = `work-title-${item.id}`;
 
                 return(
@@ -109,7 +109,35 @@ const ExperienceContent = () => {
         </div>
       </section>
 
-      <section className="experience-outcomes">
+      <section
+       className="experience-outcomes"
+       aria-labelledby="experience-outcomes-title"
+       >
+      <header className="experience-outcomes-heading">
+        <p className="section-label">{outcomes.label}</p>
+
+        <h3 id="experience-outcomes-title">
+          {outcomes.title}
+        </h3>
+
+        <p>
+         {outcomes.description}
+        </p>
+      </header>
+      <ul className="experience-outcomes-list">
+        {outcomes.items.map((outcome) => (
+          <li className="experience-outcome-item" key={outcome.id}>
+            <span className="experience-outcome-icon" aria-hidden="true">
+              ✓
+            </span>
+
+            <div className="experience-outcome-content">
+              <h4>{outcome.title}</h4>
+              <p>{outcome.description}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
 
       </section>
 

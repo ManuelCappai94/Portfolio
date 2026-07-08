@@ -1,11 +1,21 @@
+import { useEffect } from "react"
 import InnerPageHeader from "../../components/InnerPageHeader"
 import { useNavigate, Link } from "react-router-dom"
 import "../../styles/experiencePage.css"
-import { experienceCardsData, certificationsData } from "../../data/Data"
+import { experienceCardsData, certificationsData } from "../../data/experiencePageData"
 
 
 const Experience = () => {
     const navigate = useNavigate()
+
+    useEffect(()=>{
+      window.scrollTo({
+        top: 0,
+        left:0,
+        behavior: "auto"
+      })
+    }, [])
+    
   return (
     <section className="experience-page">
         <InnerPageHeader
@@ -77,8 +87,13 @@ const Experience = () => {
                     </header>
                     {
                     certificationsData.map((item)=>(
-                        <article
+                        <a 
                             key={item.id}
+                            href={item.document}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            >
+                        <article
                             className="certification-card"
                             >
                             <div className="certification-card-heading">
@@ -89,6 +104,7 @@ const Experience = () => {
                             <p>{item.title}</p>
                             </div>
                         </article>
+                        </a>
                     ))
                     }
                 </section>

@@ -3,7 +3,7 @@ import { data } from '../../../data/projectsPageData'
 import fallBackImg from "../../../images/fallBack.png"
 import { FaCircle } from "react-icons/fa6";
 import { GrNext, GrPrevious } from "react-icons/gr";
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import "../../../styles/projects.css"
 
 
@@ -49,24 +49,31 @@ useEffect (() => {
 
 
   return (
-    <>
-    <section ref={projectsRef} className='projects-section'>
-        <div className='title-container prj'>
-            <h2 className='prj-title'>
-              <span className='tag-component-prj'> &lt; </span>
-                Projects
-                <span className='tag-component-prj'>/&gt;</span>
-                </h2>
-    
-        </div>
-            <div 
-            className='slides-container'  
+    <section
+      ref={projectsRef}
+      className='projects-section'
+      aria-labelledby='projects-section-title'
+      >
+        <header className='title-container prj'>
+            <h2 id='projects-section-title' className='prj-title'>
+               <span className='tag-component-prj' aria-hidden="true"> &lt; </span>
+                    Projects
+                <span className='tag-component-prj' aria-hidden="true">/&gt;</span>
+            </h2>
+            <p className='header-copy'>A selection of projects that show how I turn ideas into working web experiences. </p>
+        </header>
+
+        <div 
+            className='slides-container'
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Featured projects"
             onTouchStart={(e) => setTouchStart(e.targetTouches[0].clientX)}
             onTouchEnd={(e) => handleTouch(e)} >
                
                 {
                     slides.map((slide, index)=>{
-                        let position = "";
+                        let position = "last";
                         let relativePosition = (index - active + slides.length) % slides.length
 
                         if(relativePosition === 0){
@@ -75,13 +82,20 @@ useEffect (() => {
                             position= "next";
                         } else if (relativePosition === slides.length -1 ){
                             position = "prev";
-                        } else {
-                            position = "last"
-                        }
-                        return <Slide key={slide._id} {...slide} classes={position}/>
+                        } 
+                        return(
+                            <Slide
+                                key={slide._id}
+                                {...slide}
+                                classes={position}
+                                index={index}
+                                totalSlides={slides.length}
+                                isActive={index === active}
+                                />
+                        ) 
                     })
                 }
-            <ul className='slider-dots'>
+            <ul className='slider-dots' aria-hidden="true">
                 {  
                    slides.map((_, index) => {
                     return (
@@ -93,70 +107,133 @@ useEffect (() => {
                     )})}
             </ul>
 
-        <aside className='btn-container'>
-            <button className='btn-prev' type='button'  onClick={prevSlide}>
-                <GrPrevious/>
-            </button>
-            <button className='btn-next' onClick={nextSlide}>
-                <GrNext/>
-            </button>
-        </aside>
+            <div className='btn-container'>
+                <button
+                    className='btn-prev'
+                    type='button'
+                    aria-label="Show previous project"
+                    onClick={prevSlide}
+                    >
+                    <GrPrevious aria-hidden="true" focusable="false"/>
+                </button>
+                <button
+                    className='btn-next'
+                    aria-label="Show next project"
+                    type='button'
+                    onClick={nextSlide}
+                    >
+                    <GrNext aria-hidden="true" focusable="false"/>
+                </button>
             </div>
-     <div className="corner-prj corner-prj-top-left"></div>
-     <div className="corner-prj corner-prj-bottom-right"></div>
-        <div className="scroll-indicator">
+        </div>
+        <div 
+            className="corner-prj corner-prj-top-left"
+            aria-hidden="true"
+        ></div>
+        <div
+            className="corner-prj corner-prj-bottom-right"
+            aria-hidden="true"
+            ></div>
+        <div
+          className="scroll-indicator"
+          aria-hidden="true">
           <span className="mouse-icon"></span>
         </div>
     </section>
-    </>
+    
   )
 }
 
 
 
-const Slide = ({ title, tecnologies,icon, desc, img, version, classes, _id, repoUrl}) => {
-    const navigate = useNavigate()
-    const goToProject =  (_id) => {
-        if(_id === "My Portfolio") {
-            window.open(repoUrl, "_blank", "noopener,noreferrer")
-        } else {
-            navigate(`projectDetails/${_id}`)
-        }
-    }
-    //ho usaato index come key perchè la lista è statica, non cambiando ordine non dovrei avere problemi
+const Slide = ({
+    title,
+    tecnologies,
+    icon,
+    desc,
+    img,
+    version,
+    classes,
+    _id,
+    repoUrl,
+    index,
+    totalSlides,
+    isActive
+    }) => {
+
+
+    const  isPortfolio = _id === "My Portfolio";
+
+    const projectAction = isPortfolio ? (
+        <a
+            className="project-link"
+            href={repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            tabIndex={isActive ? 0 : -1}
+        >
+             View repository
+        </a>
+    ) : (
+        <Link
+            className="project-link"
+            to={`/projectDetails/${_id}`}
+            tabIndex={isActive ? 0 : -1}
+        >
+            View project
+        </Link>
+    )
+
      return (
-    <article className={`slide-article ${classes}`}>
-        <div className='slide-img'>
-             <img src={img || fallBackImg} alt={title} className='img'/>
-        </div>
-        <div className='slides-desription'>
+    <article
+         className={`slide-article ${classes}`}
+         aria-roledescription="slide"
+         aria-label={`${index + 1} of ${totalSlides}: ${title}`}
+         aria-hidden={!isActive}
+         >
+        <picture className='slide-img'>
+             <img
+                src={img || fallBackImg}
+                alt={`Preview of the ${title} project`}
+                className='img'
+            />
+        </picture>
+        <section className='slides-desription'>
             <h3 className='h3-slide'>{title}</h3>
-            <div className='tecn-slide'>
+            <div
+                className='tecn-slide'
+                aria-label="Technologies used"
+             >
                 <ul className='tecn-slide-names'>
                     {
                         tecnologies.map((tec, index) =>(
-                            <li key={index}>{tec}</li>
+                            <li
+                                key={index}
+                                >
+                                {tec}
+                            </li>
                         ))
                     }
                 </ul>
                     <ul className='tecn-slide-icons'>
                         {
                             icon.map((i, index) =>(
-                                <li key={index}>{i}</li>
+                                <li
+                                 key={index}
+                                 aria-hidden="true"
+                                 >
+                                    {i}
+                                 </li>
                             ))
                         }
                     </ul>
             </div>
             <p className='desc-slide'>{desc}</p>
-            <aside className='view-container'>
-                <button
-                  type='button'
-                  className='view-btn'
-                  onClick={()=> goToProject(_id)}
-                  > {_id === "My Portfolio"? "View Repository": "View project"}</button>
+            <footer className='slide-footer'>
+                    {projectAction}
                 <p className='v-slide'>{version}</p>
-            </aside>
-        </div>
+            </footer>
+        </section>
        
     </article>
 )

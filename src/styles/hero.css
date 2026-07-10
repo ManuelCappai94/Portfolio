@@ -1,23 +1,23 @@
 .hero-section {
-  /* padding-top:2rem; */
   position: relative;
   height: 80dvh;
   width: 100%;
+   background: var(--background-gradient);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+   overflow: hidden;
+}
+.hero-layout{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  /* box-shadow: var(--dark-shadow); */
-  background: var(--background-gradient);
-  overflow: hidden;
-   /* padding: 0 3rem; */
+ 
 }
 
-  
 .title-container {
   position: relative;
-  top: 20%;
-  transform: translateY(-50%);
   font-family: "Fira Code", monospace;
 }
 .titles {
@@ -25,21 +25,20 @@
   }
 
 
-.hero-article {
+.hero-copy {
   display: flex;
   justify-content: center;
   align-items: center;
- font-family: "Fira Code", monospace;
- color: var(--text-muted);
- /* width: 100%; */
+  font-family: "Fira Code", monospace;
+  color: var(--text-muted);
 }
 
-.text-article {
+.hero-copy-text{
   text-align: center;
   margin: 0 5rem;
   padding-top: 1rem; 
-  border-top: 2px dashed black;
-  font-size: clamp(0.9rem, 1.5vw + 0.3rem, 1.6rem);
+  border-top: 2px dashed var(--text-muted);
+  font-size: clamp(0.9rem, 1.5vw + 0.3rem, 1.3rem);
 }
 
 
@@ -51,7 +50,7 @@
 }
 .animated-text {
   display: flex;
-  justify-content: center; /* centra l’animazione */
+  justify-content: center; 
   width: 15rem;
 }
 .typewriter {
@@ -67,35 +66,29 @@
   to { width: 23ch; }
 }
 
-@media screen and (min-width: 992px) {
- .hero-section {
-  flex-direction: row;
-  width: 100%;
-  /* max-width: 1200px; */
-  height: 50rem;
-  margin: 0 auto;
-  /* box-shadow: var(--dark-shadow); */
+
+
+@media screen and (min-width: 767px) {
+  .hero-section{
+    height: 50rem;
+  }
+ .hero-layout {
+  display: grid;
+  grid-template-columns:
+      minmax(0, 0.85fr)
+      minmax(0, 1.15fr);
+  justify-items: center;
 }
-.title-container {
-  position: relative;
-  top: 10%;
-  left: 5%;
-}
+
 .titles {
   display: block;
 }
 
-.text-article {
-  position: relative;
+.hero-copy-text {
   border-top: none;
   text-align: left;
-  border-left: 2px dashed black;
-  padding-left: 1rem;
-  font-size: clamp(0.8rem, 1.5vw + 0.3rem, 1.2rem);
+  border-left: 2px dashed var(--text-muted);
+  padding-left: 2rem;
   margin: 0 0 0 1rem;
-  left: 60%;
-  transform: translateX(-50%);
 }
-
-
 }

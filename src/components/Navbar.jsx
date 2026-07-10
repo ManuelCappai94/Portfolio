@@ -10,24 +10,34 @@ import { IoBagSharp } from "react-icons/io5";
 
 
 
-const NAV_LINKS = [
+const NAV_ITEMS = [
   {
-    id: 1,
+    id: "projects",
+    type: "scroll",
     target: "projects",
-    icon: <MdOutlineApps className="nav-icons" />,
+    icon: <MdOutlineApps className="nav-icons" aria-hidden="true" />,
     text: "Projects",
   },
   {
-    id: 2,
+    id: "skills",
+    type: "scroll",
     target: "skills",
-    icon: <FaCodeBranch className="nav-icons" />,
+    icon: <FaCodeBranch className="nav-icons" aria-hidden="true" />,
     text: "Skills",
   },
   {
-    id: 3,
-    target: "about",
-    icon: <FaInfo className="nav-icons" />,
-    text: "About",
+    id: "experience",
+    type: "route",
+    to: "/experience",
+    icon: <IoBagSharp className="nav-icons" aria-hidden="true" />,
+    text: "Experience",
+  },
+  {
+    id: "about",
+    type: "route",
+    to: "/about",
+    icon: <FaInfo className="nav-icons" aria-hidden="true" />,
+    text: "About Me",
   },
 ];
 
@@ -125,24 +135,36 @@ const Navbar = ({ scrollTo, changeTheme, theme }) => {
         >
           <nav className="main-navigation" aria-label="Main navigation">
             <ul className="nav-links">
-              {NAV_LINKS.map((el) => {
+              {NAV_ITEMS.map((item) => {
+                const content = (
+                <span className="button-text">
+                  {item.icon}
+                  {item.text}
+                </span>
+              );
                 return (
-                  <li key={el.id}>
-                    <button type="button" onClick={() => handleClick(el.target)}>
-                      <span className="button-text">
-                        {el.icon} {el.text}
-                      </span>
-                    </button>
+                  <li key={item.id}>
+                    {
+                      item.type === "scroll" ? (
+                      <button
+                      type='button'
+                      onClick={()=> handleClick(item.target)}
+                      >
+                        {content}
+                      </button> 
+                      ) : (
+                        <Link
+                        to={item.to}
+                        className='nav-link'
+                        onClick={() => setUseActive(false)}
+                        >
+                          {content}
+                        </Link>
+                      )
+                    }
                   </li>
                 );
               })}
-              <li>
-                <Link
-                 to={"/experience"}
-                  className='nav-link'>
-                    <span className='button-text'><IoBagSharp className='nav-icons'/>{"Experience"}</span>
-                </Link>
-              </li>
             </ul>
           </nav>
 

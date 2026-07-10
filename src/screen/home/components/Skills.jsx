@@ -1,90 +1,102 @@
-
 import { mainSkills, additionalSkills } from '../../../data/uiData'
 import "../../../styles/skills.css"
-
 
 const Skills = ({skillRef}) => {
 const core = mainSkills
 const ndCore = additionalSkills
 
   return (
-    <section ref={skillRef} className='projects-section skills'>
-      <div className='title-container skills'>
-       
-          <h2 className='skills-main-title'>
-          <span className='tag-component-skill'> &lt;</span>
+    <section 
+     ref={skillRef}
+     className='projects-section skills'
+     aria-labelledby="skills-section-title">
+
+      <header className='title-container skills'>
+          <h2 id="skills-section-title" className='skills-main-title'>
+          <span className='tag-component-skill' aria-hidden="true"> &lt;</span>
             Skills
-           <span className='tag-component-skill'>/&gt;</span>
+           <span className='tag-component-skill' aria-hidden="true">/&gt;</span>
           </h2>
-        
-      </div>
-      <article className='skills-container'>
-        <span className='vertical-line'></span>
-        <span className='orizzontal-line'></span>
+          <p className='skills-copy'>A practical skill set developed through projects, focused study, and professional experiences, strengthened by continuous improvement.</p>
+      </header>
+      
+      <div className='skills-container'>
+        <span className='vertical-line' aria-hidden="true"></span>
+        <span className='orizzontal-line' aria-hidden="true"></span>
        
-          <div className='title-skills'>
-            <h3>Core Skills</h3>
-          </div>
-          <div className='main-skills'>
+       <section 
+        className='core-skills-section'
+        aria-labelledby='core-skills-title'>
+            <h3
+             id='core-skills-title'
+             className='title-skills'
+             >
+                Core Skills
+              </h3>
+          <ul className='main-skills'>
             {
               core.map((skill)=>{
-                return <CoreSkills key={skill.id} {...skill}/>
+                return <SkillItem key={skill.id} {...skill}/>
               })
             }
-          </div>
-         <span className='orizzontal-line second'></span>
-          <div className='title-skills second'>
-            <h3> Additional Skills</h3>
-          </div>
-          <div className='secondary-skills'>
-            {
+          </ul>
+        </section>
+
+      <span className='orizzontal-line second' aria-hidden="true"></span>
+
+       <section 
+        className='secondary-skills-section'
+        aria-labelledby='secondary-skills-title'>
+            <h3
+             id='secondary-skills-title'
+             className='title-skills second'
+             >
+                Additional Skills
+              </h3>
+          <ul className='secondary-skills'>
+          {
               ndCore.map((skill)=>{
-                return <AdditionalSkills key={skill.id} {...skill}/>
+                return <SkillItem key={skill.id} {...skill} modifier='nd'/>
               })
             }
-          </div>
-      </article>
-      <div className="corner-skill bottom-right"></div>
-      <div className="corner-skill bottom-left"></div>
-        <div className="scroll-indicator">
-          <span className="mouse-icon"></span> </div>
+          </ul>
+        </section>
+
+      </div>
+      <div className="corner-skill bottom-right" aria-hidden="true"></div>
+      <div className="corner-skill bottom-left" aria-hidden="true"></div>
+      <div className="scroll-indicator" aria-hidden="true">
+        <span className="mouse-icon"></span>
+      </div>
     </section>
   )
 }
 
-const CoreSkills = ({title, subtitle, icon}) => {
-  return(
-  <section className='single-skill' >
-        <span className='icon-container'>
-          {icon}
-        </span>
-        <p className='title-dev'>
-          {title}
-        </p>
-          <p className='subTitle-dev'>
-          {subtitle || ""}
-        </p>
-  </section>
-  )
+const SkillItem = ({ title, subtitle, icon, modifier = "" }) => {
+  const getClassName = (baseClass) =>
+    modifier ? `${baseClass} ${modifier}` : baseClass;
 
-}
-
-
-const AdditionalSkills = ({title,subtitle, icon}) => {
-  return(
-    <section className='single-skill nd'>
-      <span className='icon-container nd'>
+  return (
+    <li className={getClassName("single-skill")}>
+      <span
+        className={getClassName("icon-container")}
+        aria-hidden="true"
+      >
         {icon}
       </span>
-       <p className='title-dev nd'>
-          {title}
+
+      <p className={getClassName("title-dev")}>
+        {title}
+      </p>
+
+      {subtitle && (
+        <p className="subTitle-dev">
+          {subtitle}
         </p>
-        <p className='subTitle-dev'>
-          {subtitle || ""}
-        </p>
-    </section>
-  )
-}
+      )}
+    </li>
+  );
+};
 
 
 export default Skills

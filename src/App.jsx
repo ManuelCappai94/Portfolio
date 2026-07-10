@@ -5,6 +5,7 @@ import ErrorePage from './screen/ErrorePage';
 import Footer from './components/Footer';
 import Experience from './screen/experience/Experience';
 import ExperiencePageLayout from './screen/experience/components/ExperiencePageLayout';
+import AboutPage from './screen/about/AboutPage';
 import { useRef, useEffect, useState, useCallback, useMemo } from 'react';
 import {  Route, Routes, useLocation } from 'react-router-dom';
 import "./styles/global.css"
@@ -16,7 +17,6 @@ function App() {
   const heroRef = useRef(null)
   const projectsRef = useRef(null)
   const skillRef = useRef(null)
-  const aboutRef = useRef(null)
   const location = useLocation()
 
   const getFromLocalStorage =() =>{
@@ -59,16 +59,13 @@ const scrollToSkills = useCallback(() => {
   skillRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
 }, []);
 
-const scrollToAbout = useCallback(() => {
-  aboutRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-}, []);
+
 
 const scrollTo = useMemo(() => ({
   hero: scrollToHero,
   projects: scrollToProjects,
   skills: scrollToSkills,
-  about: scrollToAbout
-}), [scrollToHero, scrollToProjects, scrollToSkills, scrollToAbout]);
+}), [scrollToHero, scrollToProjects, scrollToSkills]);
 
 
 
@@ -89,11 +86,11 @@ useEffect(() => {
                 heroRef={heroRef}
                 projectsRef={projectsRef}
                 skillRef={ skillRef}
-                aboutRef={aboutRef}
                 />}/>
             <Route path='/projectDetails/:id' element={<ProjectDetails />}/>
             <Route path='/experience' element={<Experience/>}></Route>
             <Route path="/experience/:id" element={<ExperiencePageLayout/>}></Route>
+            <Route path='/about' element={<AboutPage/>}></Route>
             <Route path='*' element={<ErrorePage/>}/>
           </Routes>  
         </main>

@@ -3,9 +3,13 @@
 :root {
    --light-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     --dark-shadow: 4px 5px 15px rgba(5, 6, 6, 0.4);
+    --copy-shadow: 10px 8px 5px var(--bg-alt2);
     --transition: all 0.2s ease;
     --slideTransition: all 0.5s ease;
     --btnTransition: all 0.125s ease;
+    --margin-copy-home-tablet: 1.5rem auto 0 clamp(4rem, 8vw, 6rem);
+    --margin-copy-home-desktop: 2rem 0 0 clamp(4rem, 5vw, 7rem);
+
     --background-gradient: linear-gradient(
     90deg,
     transparent,

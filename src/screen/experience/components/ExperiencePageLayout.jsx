@@ -6,6 +6,7 @@ import ErrorePage from '../../ErrorePage'
 import "../../../styles/experienceDetailsPage.css"
 import ExperienceContent from './ExperienceContent'
 import { experienceDetailsData } from '../../../data/experienceDetailsPageData'
+import PortfolioCta from '../../../components/PortfolioCta'
 
 
 
@@ -34,6 +35,7 @@ useEffect(()=>{
         pageTitle={currentPage.title}
         />
      <ExperienceContent {...currentPage}/> 
+     <PortfolioCta/>
     </section>
   )
 }

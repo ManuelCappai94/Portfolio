@@ -5,25 +5,64 @@
    background: var(--background-gradient);
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
    overflow: hidden;
 }
+
+
 .hero-layout{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
- 
+  height: 60%;
+ gap: 1rem;
 }
 
 .title-container {
   position: relative;
   font-family: "Fira Code", monospace;
 }
+
+
 .titles {
-    color: var(--text);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  line-height: 1.08;
+  letter-spacing: 0.09em;
+  color: var(--text); 
+    background: linear-gradient(
+    90deg,
+    transparent,
+    var(--hero-title-aura) 30%,
+    var(--hero-title-aura) 60%,
+    transparent
+  );
+ 
+  padding: 1rem 1.5rem;
+
+  mask-image: linear-gradient(
+    180deg,
+    transparent,
+    black 30%,
+    black 70%,
+    transparent
+  );
   }
 
+
+  .tag-component-hero{
+    width: 2.5rem;
+    font-size: 2.5rem;
+    color: var(--keyword);
+    font-weight: bold;
+  }
+
+  .titles h1 {
+    margin: 1rem auto;
+  }
 
 .hero-copy {
   display: flex;
@@ -34,11 +73,14 @@
 }
 
 .hero-copy-text{
+  width: 80dvi;
   text-align: center;
-  margin: 0 5rem;
-  padding-top: 1rem; 
-  border-top: 2px dashed var(--text-muted);
+  margin: 0 auto;
+  padding: 0.5rem; 
+  border-left: 4px solid var(--keyword);
+   border-radius: 20px;
   font-size: clamp(0.9rem, 1.5vw + 0.3rem, 1.3rem);
+  box-shadow: var(--copy-shadow);
 }
 
 
@@ -57,7 +99,7 @@
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  width: 23ch; /* 23 caratteri */
+  width: 23ch; 
   animation: typing 4s steps(23)
 }
 
@@ -74,21 +116,28 @@
   }
  .hero-layout {
   display: grid;
+  height: auto;
   grid-template-columns:
       minmax(0, 0.85fr)
       minmax(0, 1.15fr);
   justify-items: center;
 }
 
-.titles {
-  display: block;
-}
+ .tag-component-hero{
+    width: 3rem;
+    font-size: 3rem;
+
+  }
 
 .hero-copy-text {
+  width: 100%;
   border-top: none;
   text-align: left;
-  border-left: 2px dashed var(--text-muted);
+  border-left: 4px solid var(--keyword);
   padding-left: 2rem;
-  margin: 0 0 0 1rem;
+  margin: 0 2rem 0 0;
+  border-radius: 20px;
+  box-shadow: var(--copy-shadow);
+  box-sizing: border-box;
 }
 }

@@ -10,7 +10,9 @@ const Hero = ({heroRef}) => {
       <div className="hero-layout">
         <header className='title-container'>
           <div className='titles'>
-              <h1>Frontend<br/><span >Developer</span> </h1>
+            <span className='tag-component-hero' aria-hidden="true"> &lt; </span>
+              <h1>Frontend<br/>Developer</h1>
+            <span className='tag-component-hero' aria-hidden="true">/&gt;</span>
           </div>
         </header>
         

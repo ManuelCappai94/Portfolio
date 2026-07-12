@@ -12,6 +12,7 @@ import "./styles/global.css"
 
 
 
+
 function App() {
   
   const heroRef = useRef(null)
@@ -92,7 +93,7 @@ useEffect(() => {
             <Route path="/experience/:id" element={<ExperiencePageLayout/>}></Route>
             <Route path='/about' element={<AboutPage/>}></Route>
             <Route path='*' element={<ErrorePage/>}/>
-          </Routes>  
+          </Routes> 
         </main>
       <Footer/>
     </div>

@@ -5,6 +5,7 @@ import "../../styles/projectDetails.css"
 import ProjectDescription from './components/ProjectDescription';
 import InnerPageHeader from '../../components/InnerPageHeader';
 import ErrorePage from '../ErrorePage';
+import PortfolioCta from '../../components/PortfolioCta';
 
 const ProjectDetails = () => {
   const {id} = useParams() 
@@ -36,6 +37,7 @@ const ProjectDetails = () => {
         pageTitle={project.title}
       />
           <ProjectDescription project={project} /> 
+          <PortfolioCta/>
     </section>
   )
 }

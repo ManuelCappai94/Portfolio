@@ -3,6 +3,7 @@ import InnerPageHeader from "../../components/InnerPageHeader"
 import { useNavigate, Link } from "react-router-dom"
 import "../../styles/experiencePage.css"
 import { experienceCardsData, certificationsData } from "../../data/experiencePageData"
+import PortfolioCta from "../../components/PortfolioCta"
 
 
 const Experience = () => {
@@ -115,7 +116,7 @@ const Experience = () => {
                 </section>
             </div>
         </section>
-        
+    <PortfolioCta/>    
     </section>
   )
 }

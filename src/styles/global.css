@@ -9,6 +9,14 @@
     --btnTransition: all 0.125s ease;
     --margin-copy-home-tablet: 1.5rem auto 0 clamp(4rem, 8vw, 6rem);
     --margin-copy-home-desktop: 2rem 0 0 clamp(4rem, 5vw, 7rem);
+    --border-gradient: linear-gradient(
+      90deg,
+      transparent 0%,
+      color-mix(in srgb, var(--text), transparent 55%) 38%,
+      var(--text) 50%,
+      color-mix(in srgb, var(--text), transparent 55%) 62%,
+      transparent 100%
+    );
 
     --background-gradient: linear-gradient(
     90deg,
@@ -34,6 +42,7 @@
   --string: #ca6f4b;
   --keyword: #C586C0;
   --gb-dpad: #1C1C1C;
+   --hero-title-aura: color-mix(in srgb, var(--bg) 88%, var(--keyword) 12%);
 }
 
 :root.light-mode {
@@ -50,6 +59,7 @@
   --string: #A65C4E;
   --keyword: #7B4E98;
   --gb-dpad: #1C1C1C;
+  --hero-title-aura: color-mix(in srgb, var(--bg) 92%, var(--keyword) 8%);
 }
 
 .bar {
@@ -120,8 +130,8 @@ h3 {
   position: absolute;
   width: 200px;
   height: 200px;
-  border-right: 10px solid var(--keyword);
-  border-bottom: 10px solid var(--keyword);
+  border-right: 15px solid var(--keyword);
+  border-bottom: 15px solid var(--keyword);
   opacity: 0.4;
    transform: skew(-30deg);
 }

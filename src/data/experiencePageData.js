@@ -4,6 +4,7 @@ import ideaCertificate from "./documents/certificates/1 Certificado prácticas p
 import mayerfeldAICertificate from "./documents/certificates/dc50b790-fa53-4c8c-ad37-35376c44fc40.pdf"
 import  udemyReactCertificate from "./documents/certificates/UC-8acdf35f-7e46-4cb9-b34f-c2ce613045c5.pdf"
 import udemyJSCertificate from "./documents/certificates/UC-ec744161-daa4-4c70-a55c-f548cf38ed0c.pdf"
+import mayerfeldPracticumCertificate from "./documents/certificates/2709535b-3df5-4440-99aa-b97342482988.pdf"
 
 export const experienceCardsData = [
     {
@@ -36,10 +37,14 @@ export const certificationsData = [
     title: "Professional Internship Certificate",
     issuer: "Ayuntamiento de Alzira · IDEA",
     date: "May 2024",
-    duration: "6 months",
-    description:
-      "Official certificate documenting a six-month professional internship within the local development agency, including administrative support, event organization, digital content management, and communication with local users.",
     document: ideaCertificate,
+  },
+  {
+    id: "mayerfeld-practicum-certificate",
+    title: "Mayerfeld Practicum Program ® in Frontend Development",
+    issuer: "Mayerfeld Consulting",
+    date: "July 2026",
+    document: mayerfeldPracticumCertificate,
   },
   {
     id: "mayerfeld-ai-frontend-certificate",
@@ -47,35 +52,20 @@ export const certificationsData = [
       "AI Frontend Engineer: Building Web Applications with Modern AI Tools",
     issuer: "Mayerfeld Consulting",
     date: "June 2026",
-    duration: "2 hours",
-    description:
-      "Certificate of completion for a focused training session on integrating modern AI tools into frontend development workflows.",
     document: mayerfeldAICertificate,
   },
   {
     id: "react-redux-udemy-certificate",
     title: "React.js e Redux in Italiano: Teoria, Hooks + 11 Progetti",
     issuer: "Udemy",
-    instructors: ["Omar De Angelis", "Leonardo De Marco"],
     date: "April 2026",
-    duration: "24.5 hours",
-    description:
-      "A practical React and Redux course covering component-based development, hooks, state management, and the implementation of multiple frontend projects.",
     document: udemyReactCertificate,
   },
   {
     id: "javascript-typescript-udemy-certificate",
     title: "Corso Javascript con Progetti pratici & Typescript",
     issuer: "Udemy",
-    instructors: [
-      "Out Of Class",
-      "Omar De Angelis",
-      "Leonardo De Marco",
-    ],
     date: "October 2025",
-    duration: "24.5 hours",
-    description:
-      "A project-oriented course covering modern JavaScript fundamentals, DOM development, application logic, and an introduction to TypeScript.",
     document: udemyJSCertificate,
   },
 ];

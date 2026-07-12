@@ -1,0 +1,129 @@
+.cta-section{
+    position: relative;
+    max-width: 800px;
+    margin: 4rem auto;
+    background: var(--background-gradient);
+    padding: 1.5rem;
+    text-align: center;
+    
+}
+
+#cta-title{
+    margin: 0.5rem auto;
+    font-size: 1.4rem;
+}
+
+.cta-section::after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--border-gradient);
+    filter:
+    drop-shadow(0 0 0.35rem var(--text-muted))
+    drop-shadow(0 0 0.9rem var(--text-muted));
+    
+}
+.cta-section::before{
+    content: "";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: var(--border-gradient);
+    filter:
+      drop-shadow(0 0 0.35rem var(--text-muted))
+    drop-shadow(0 0 0.9rem var(--text-muted));
+   
+}
+
+.cta-copy{
+    max-width: 25rem;
+    opacity: 0.8;
+    margin: 1rem auto;
+     line-height: 1.5;
+}
+
+.cta-layout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    width: 20rem;
+    margin: 0 auto;
+    gap: 1rem;
+    
+}
+.cta-card.cta-card--cv-item{
+    color: var(--comment);
+}
+
+.cta-card {
+    text-decoration: none;
+    color: var(--highlight);
+    text-align: left;
+    border: 2px solid currentColor;
+    padding: 0.5rem;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.cta-card-header{
+    display: flex;
+    align-items: center;
+    gap: 1rem
+}
+.cta-card-header h3 {
+    font-size: 1.1rem;
+    text-decoration: underline;
+}
+.cta-card-icon{
+    display: flex;
+    font-size: 1.2rem;
+    border: 2px solid currentColor;
+    border-radius: 100%;
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    filter:
+      drop-shadow(0 0 0.1rem currentColor)
+    drop-shadow(0 0 1.8rem currentColor);
+}
+
+.cta-card-copy{
+   font-size: 0.9rem;
+   opacity: 0.8;
+   line-height: 1.5;
+}
+
+.cta-card-arrow{
+    font-size: 1.1rem;
+}
+
+@media screen and (min-width:700px) {
+    #cta-title{
+        font-size: 2rem;
+    }
+    .cta-layout{
+        flex-direction: row;
+        width: 40rem;
+        margin-top: 3rem;
+    }
+    .cta-card{
+        width: 18rem;
+    }
+}
+
+@media (hover: hover){
+    .cta-card:hover{
+        transform: translateY(-0.2rem);
+    border-color: var(--string);
+    color: var(--string);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.12);
+    }
+}

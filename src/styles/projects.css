@@ -83,6 +83,7 @@
    object-fit: cover;
    border: 2px solid var(--bg);
    box-sizing: border-box;
+   background: black;
 }
 
 
@@ -116,8 +117,8 @@
 .slides-desription {
   display: flex;
   flex-direction: column;
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   overflow: hidden;
   background-color: var(--bg-slide);
   border-radius: 15px;
@@ -128,9 +129,17 @@
 .h3-slide{
   display: flex;
  justify-content: center;
- margin: 0.5rem auto;
- font-size: 1rem;
+ margin: 0.5rem auto 0.1rem;
+ font-size: 0.95rem;
  color: var(--bg);
+}
+.context-lable{
+text-align: center;
+color: var(--bg);
+margin-bottom: 0.2rem;
+margin-top: 0;
+font-size: 0.8rem;
+opacity: 0.7;
 }
 
 .tecn-slide{
@@ -158,8 +167,9 @@
   margin: auto 0 ;
   text-align: center;
   font-size: 0.8rem;
-  color: var(--string);
+  color: var(--bg);
   font-style: italic;
+  opacity: 0.8;
 }
 
 .slide-footer{
@@ -189,8 +199,10 @@
   top: 80%;
   left: 50%;
   transform: translate(-50%, 50%);
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   padding: 0;
   /* background-color: grey; */
 }
@@ -263,13 +275,13 @@ color: var(--keyword);
   }
 
   .slides-desription {
-    width: 220px;
-    height: 220px;
+    width: 240px;
+    height: 240px;
   }
 
   .h3-slide {
     margin: 0.65rem auto 0.4rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .tecn-slide {
@@ -368,9 +380,12 @@ color: var(--keyword);
   height: 170px;
 }
 .slides-desription {
-  width: 220px;
-  height: 220px;
+  width: 240px;
+  height: 240px;
  
+}
+.context-lable{
+  font-size: 0.9rem;
 }
 .slider-dots {
  
@@ -383,7 +398,7 @@ color: var(--keyword);
   top: 5.5rem;
 }
 .h3-slide{
- font-size: 1.2rem;
+ font-size: 1.15rem;
  margin: 0.7rem auto
  
 }
@@ -436,12 +451,12 @@ color: var(--keyword);
  
 }
 .slides-desription {
-  width: 145px;
-  height: 145px;
+  width: 165px;
+  height: 165px;
 }
 .h3-slide {
   margin: 0.4rem auto;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
 }
 
 .tecn-slide {
@@ -459,13 +474,13 @@ color: var(--keyword);
 
 .project-link {
   padding: 0.18rem 0.35rem;
-  font-size: 0.5rem;
+  font-size: 0.6rem;
 }
 
 .v-slide {
   font-size: 0.72rem;
 }
 .slider-dots{
-  top: 76%;
+  top: 78%;
 }
 }

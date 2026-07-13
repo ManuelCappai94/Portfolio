@@ -28,7 +28,8 @@ export const devIcons ={
   canvasAPI: <FaPaintBrush className="dev-icons"/>,
   tiled: <BsGrid3X3Gap className="dev-icons"/>,
   css: <FaCss3Alt className="dev-icons"/>,
-  redux: <SiRedux className="dev-icons"/>
+  redux: <SiRedux className="dev-icons"/>,
+  html: <FaHtml5 className="dev-icons"/>
 }
 
 

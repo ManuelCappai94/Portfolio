@@ -1,127 +1,160 @@
-import {useState, useEffect, useRef} from 'react'
 import "../../../styles/projectDetails.css"
 import fallBackProjects from "../../../images/fallBackProjects.png"
+import { IoIosBuild } from "react-icons/io";
+import { RiGitRepositoryLine } from "react-icons/ri";
 
 const ProjectDescription = ({project}) => {
-const [isfullScreen, setIsFullscreen] = useState(false)
-  const contRef = useRef(null)
- const {_id, title, demoUrl, version, longDesc, features, howToUse, repoUrl, controls} = project
-
-  const goFullScreen = ()=>{  
-    setIsFullscreen(prev => !prev)
-  }
-
-    useEffect(()=>{
-       
-      const element = contRef.current
-      if(!element) return
-
-      if(isfullScreen){
-        element.requestFullscreen()
-      } else {
-        if(document.fullscreenElement){
-          document.exitFullscreen()
-        }
-      }
-    }, [isfullScreen])
+ const {
+  _id,
+   title,
+    demoUrl,
+     version,
+      longDesc,
+       features,
+         repoUrl,
+          controls,
+          projectType,
+          context,
+          tecnologies
+        } = project
 
   return (
-   <article className='single-prj-container'>
-              
-              <div className='prj-view-cont' ref={contRef}>
-                { demoUrl? (
-                   <iframe 
-                    src={demoUrl} 
-                    className={`prj-view ${_id}`} 
-                    title={title}>
+   <article className='project-detail-article'>
+
+    <header className="project-detail-intro">
+      <div className="project-detail-badges">
+        <span className="project-detail-badge">
+          {projectType}
+        </span>
+
+        <span className="project-detail-badge">
+          {context}
+        </span>
+      </div>
+
+      <ul className="project-detail-stack" aria-label="Project technologies">
+        {tecnologies.map((tech) => (
+          <li key={tech}>{tech}</li>
+        ))}
+      </ul>
+    </header>
+
+      <section
+        className="project-preview"
+        aria-label={`${title} live preview`}
+        >
+          { 
+            demoUrl ? (
+              <iframe 
+                src={demoUrl} 
+                className={`project-preview-frame ${_id}`} 
+                title={`${title} live preview`}>
                 </iframe>
-                ) : (
-                    <div className='prj-fallback'>
-                    <img src={fallBackProjects} alt='Project not deployed yet' className='prj-fallback-image' />
-                  </div>
-                )
-
-                }
-               
-                  <button className={_id === "Game_Prototype"? "fullbtn game": "fullbtn"} onClick={goFullScreen}>FullScreen</button>
-              </div>  
+                  ) : (
+                    <div className='project-preview-fallback'>
+                      <img src={fallBackProjects} alt='Project not deployed yet' className='project-preview-fallback-image' />
+                    </div>
+                  )
+              }
+      </section>      
               
-              <div className='desc-container'>
-                <ProjectExtras controls={controls} howToUse={howToUse}/>
-                    <h5 className='desc-title'>!Description</h5>
-                  <p className='long-desc'>{longDesc}</p>
-                  <div className='coloums'>
+      <div className='project-detail-content'>
 
-                  
+        <ProjectExtras controls={controls}/>
+        <section 
+          className="description-section"
+          aria-labelledby="project-description-title"
+          >
+          <header className="project-section-header">
+            <p className="project-section-label">Project overview</p>
+
+            <h2 id="project-description-title" className="project-section-title">
+              <span className="tag-component-prjDetails" aria-hidden="true">&lt;</span>
+              Description
+              <span className="tag-component-prjDetails" aria-hidden="true">/&gt;</span>
+            </h2>
+
+            <p className="project-section-intro">
+              A short explanation of the project, its purpose, and its architecture.
+            </p>
+          </header>
+
+            <p className='project-description-copy'>{longDesc}</p>
+
+        </section>
+
+              <section
+                 className="features-section"
+                 aria-labelledby="project-features-title"
+              >
+                <header className="project-section-header">
+                  <p className="project-section-label">Core functionality</p>
+
+                  <h2 id="project-features-title" className="features-title">
+                    <span className="tag-component-prjDetails" aria-hidden="true">&lt;</span>
+                    Features
+                    <span className="tag-component-prjDetails" aria-hidden="true">/&gt;</span>
+                  </h2>
+
+                  <p className="project-section-intro">
+                    The main features, interactions, and implementation details included in the project.
+                  </p>
+                </header>
+
+                <div className='project-info-layout'>
+
                   <ul className='features'>
-                     <li>[--Features--]</li>
                     {     
-                        features.map( (feature, index) => {
-                            return (
-                                  
-                                <li className='single-feature' key={index}>
-                                    {feature}
-                                </li>
-                            )
+                        features.map((feature, index) => {
+                            return (  
+                              <li className='project-feature-item' key={index}>
+                                  {feature}
+                              </li>
+                            );
                         })  
                     }
                   </ul>
-                    <aside className='sido-info'>  
-                        <p className='version'>Version: {version}</p>
-                        <a 
-                        href={repoUrl}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className='repo-url'
-                        >Link to {title} repository</a>
-                    </aside>
-                    </div>
-             </div> 
-         
-        </article>
+                  
+                <aside className='project-meta'>  
+                  <p className='project-version'><span className="meta-icon"><IoIosBuild/></span> Version: {version}</p>
+                  <a 
+                    href={repoUrl}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='project-repo-link'
+                    >
+                    <span className="meta-icon"><RiGitRepositoryLine/></span>  Link to {title} repository
+                    </a>
+                </aside>
+          </div>
+        </section>
+      </div>  
+    </article>
   )
 }
 
-const ProjectExtras = ({controls, howToUse}) => {
+const ProjectExtras = ({controls}) => {
     return (
-        <>
-         {
-            controls && (
-                <details>
-                    <summary>controls</summary>
-                    <ul className='controls'>
-                        {
-                            controls.map((info, index) =>{
-                                return (
-                                    <li className='single-button' key={index}>
-                                        {info.title} {info.keys}
-                                    </li>
-                                )
-                            })
-                        }
-                    </ul>
-                </details>
-            )
-          } 
-          {
-            howToUse && (
-              <details>
-                <summary>How To Use</summary>
-                <ul className='controls'>
-                  {
-                    howToUse.map((info, index)=>{
-                      return (
-                        <li className='single-button' key={index}>
-                          {info}
-                        </li>
+      <>
+        {
+          controls && (
+            <details className="project-controls">
+              <summary>Controls</summary>
+              <ul className='controls'>
+                {
+                  controls.map((info, index) =>{
+                    return (
+                      <li className='single-button' key={index}>
+                        {info.title} {info.keys}
+                      </li>
                       )
                     })
                   }
-                </ul>
-              </details>
+              </ul>
+            </details>
             )
-          } 
-        </>
+          }  
+      </>
     )
 }
 

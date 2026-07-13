@@ -158,7 +158,9 @@ const Slide = ({
     repoUrl,
     index,
     totalSlides,
-    isActive
+    isActive,
+    projectType,
+    context
     }) => {
 
 
@@ -200,6 +202,7 @@ const Slide = ({
         </picture>
         <section className='slides-desription'>
             <h3 className='h3-slide'>{title}</h3>
+                <p className='context-lable'>{projectType}</p>
             <div
                 className='tecn-slide'
                 aria-label="Technologies used"

@@ -41,25 +41,30 @@
   --comment: #6A9955;
   --string: #ca6f4b;
   --keyword: #C586C0;
-  --gb-dpad: #1C1C1C;
+  --glow-effect: 
+    drop-shadow(0 0 0.35rem currentColor)
+    drop-shadow(0 0 1.2rem currentColor);
    --hero-title-aura: color-mix(in srgb, var(--bg) 88%, var(--keyword) 12%);
 }
 
 :root.light-mode {
-  --bg: #FFFFFF;
-  --bg-alt: #fffbfb;
-  --bg-alt2: #f3f2f2f8;
-  --bg-slide:#1f1e1e;
-  --bg-skill:#131212d7;
+ --bg: #b7cbe2;
+  --bg-alt: #F7FBFF;
+  --bg-alt2: #E4EEF8;
+
+  --bg-slide: #202733;
+  --bg-skill: #5f7691;
+
   --accent: #0064B0;
-  --text: #1E1E5E;
-  --text-muted: #5A5A5A;
+  --text: #30363d;
+  --text-muted: #617487;
+
   --highlight: #2B88D8;
   --comment: #017F3F;
   --string: #A65C4E;
   --keyword: #7B4E98;
-  --gb-dpad: #1C1C1C;
-  --hero-title-aura: color-mix(in srgb, var(--bg) 92%, var(--keyword) 8%);
+  --glow-effect: transparent;
+  --hero-title-aura: transparent;
 }
 
 .bar {

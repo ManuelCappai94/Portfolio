@@ -31,12 +31,12 @@ const Experience = () => {
             </h2>
             <p className="experience-intro-copy">
                 A selection of{" "}
-                <strong className="highlighted">technical</strong> and{" "}
+                <strong>technical</strong> and{" "}
                 <strong className="string">international experiences</strong> that shaped
                 how I approach frontend development, teamwork, communication, and
                 project delivery. This page also collects{" "}
-                <strong className="commented">professional credentials</strong> and
-                recommendations that support that journey.
+                <strong className="commented">professional credentials</strong> that document
+                my training and practical growth.
             </p>
         </header>
         <section 
@@ -50,7 +50,7 @@ const Experience = () => {
                 </h2>
                 <p className="section-copy">
                     Explore the{" "}
-                    <strong className="string">environments</strong>, responsibilities, and
+                    <strong >environments</strong>, responsibilities, and
                     challenges that contributed to my{" "}
                     <strong className="commented">professional development</strong>.
                 </p>
@@ -71,12 +71,12 @@ const Experience = () => {
             <header className="experience-section-header">
                 <p className="section-label">Professional validation</p>
                 <h2 id="credentials-title" className="section-label-title">
-                    <strong className="highlighted">Credentials and recommendations</strong>
+                    <strong className="highlighted">Professional credentials</strong>
                 </h2>
                 <p className="section-copy">
-                        Certifications and{" "}
-                    <strong className="string">external references</strong> that document my
-                    training, professional conduct, and contribution to{" "}
+                    Certifications that document my{" "}
+                    <strong className="string">training path</strong>, professional experience,
+                    and project-based{" "}
                     <strong className="commented">collaborative work</strong>.
                 </p>
             </header>
@@ -109,11 +109,7 @@ const Experience = () => {
                     ))
                     }
                 </section>
-                <section
-                    className="recommendations" >
-                    
-            
-                </section>
+          
             </div>
         </section>
     <PortfolioCta/>    

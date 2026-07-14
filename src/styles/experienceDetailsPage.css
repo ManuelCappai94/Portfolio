@@ -33,7 +33,7 @@
 .company-logo{
     width: 10rem;
     border-radius: 10px;
-    background-color: var(--bg-slide);
+    background-color: rgb(221, 213, 201);
 }
 .experience-date{
  opacity: 0.8;

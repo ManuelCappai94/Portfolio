@@ -14,8 +14,8 @@ import { devIcons } from "./uiData";
 
 export const data = [
     {
-        _id: "NextStore",
-        title: "NextStore",
+        _id: "NextShop",
+        title: "NextShop",
         tecnologies: ["Next.js", "TypeScript", "Redux Toolkit"],
         icon: [devIcons.next, devIcons.ts, devIcons.redux],
         projectType: "Solo Project",
@@ -228,7 +228,7 @@ export const data = [
         icon: [devIcons.react, devIcons.css],
         desc: "Personal portfolio built with React",
         img: portfolio,
-        version: "v.1.2",
+        version: "v.1.5",
         repoUrl: "https://github.com/ManuelCappai94/Portfolio"
     }
 ]

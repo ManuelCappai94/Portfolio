@@ -1,5 +1,5 @@
 import pictureOfMe from "../../../images/picture_of_me.png";
-import nextStoreHero from "../../../images/NextShop.png"
+import nextStoreHero from "../../../images/hero_next-store.jpeg"
 import nextStoreHeroResponsive from "../../../images/hero_next_store_mobile.jpeg"
 import "../../../styles/about.css";
 

@@ -49,38 +49,47 @@ const Navbar = ({ scrollTo, changeTheme, theme }) => {
   const location = useLocation();
 
   const isOn = theme === "dark-mode";
+
   const containerRef = useRef(null);
   const optionsRef = useRef(null);
+  const mainToggleRef = useRef(null);
+  const optionsToggleRef = useRef(null);
 
-  const handleClickCloseMenu = (e) => {
-    if (containerRef.current && !containerRef.current.contains(e.target)) {
+
+useEffect(()=>{
+  if (!isActive && !isOpen) return
+
+    const handleClickCloseMenu = (e) => {
+
+    const target = e.target;
+
+    const clickedMainMenu =
+      containerRef.current && containerRef.current.contains(target);
+
+    const clickedMainToggle =
+      mainToggleRef.current && mainToggleRef.current.contains(target);
+
+    const clickedOptionsMenu =
+      optionsRef.current && optionsRef.current.contains(target);
+
+    const clickedOptionsToggle =
+      optionsToggleRef.current && optionsToggleRef.current.contains(target);
+
+    if (isActive && !clickedMainMenu && !clickedMainToggle) {
       setUseActive(false);
     }
 
-    if (optionsRef.current && !optionsRef.current.contains(e.target)) {
+    if (isOpen && !clickedOptionsMenu && !clickedOptionsToggle) {
       setIsOpen(false);
     }
   };
 
-  useEffect(() => {
-    if (isActive) {
-      document.addEventListener("mousedown", handleClickCloseMenu);
-    } else {
-      document.removeEventListener("mousedown", handleClickCloseMenu);
-    }
+  document.addEventListener("mousedown", handleClickCloseMenu);
 
-    return () => document.removeEventListener("mousedown", handleClickCloseMenu);
-  }, [isActive]);
-
-  useEffect(() => {
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickCloseMenu);
-    } else {
-      document.removeEventListener("mousedown", handleClickCloseMenu);
-    }
-
-    return () => document.removeEventListener("mousedown", handleClickCloseMenu);
-  }, [isOpen]);
+  return () => {
+    document.removeEventListener("mousedown", handleClickCloseMenu)
+  }
+}, [isActive, isOpen])
 
   const switchTheme = () => {
     changeTheme();
@@ -115,6 +124,7 @@ const Navbar = ({ scrollTo, changeTheme, theme }) => {
           </button>
 
           <button
+            ref={mainToggleRef}
             type="button"
             className="btn nav-toggler"
             onClick={openMenu}
@@ -194,6 +204,7 @@ const Navbar = ({ scrollTo, changeTheme, theme }) => {
           </div>
 
           <button
+            ref={optionsToggleRef}
             className="btn-toggler"
             onClick={() => setIsOpen((prev) => !prev)}
             type="button"

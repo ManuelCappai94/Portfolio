@@ -21,10 +21,7 @@
     top: 0;
     left: 0;
     background: var(--border-gradient);
-    filter:
-    drop-shadow(0 0 0.35rem var(--text-muted))
-    drop-shadow(0 0 0.9rem var(--text-muted));
-    
+    filter: var(--glow-effect)  
 }
 .cta-section::before{
     content: "";
@@ -34,10 +31,7 @@
     bottom: 0;
     left: 0;
     background: var(--border-gradient);
-    filter:
-      drop-shadow(0 0 0.35rem var(--text-muted))
-    drop-shadow(0 0 0.9rem var(--text-muted));
-   
+    filter: var(--glow-effect) 
 }
 
 .cta-copy{
@@ -90,9 +84,7 @@
     padding: 0.5rem;
     align-items: center;
     justify-content: center;
-    filter:
-      drop-shadow(0 0 0.1rem currentColor)
-    drop-shadow(0 0 1.8rem currentColor);
+    filter: var(--glow-effect) 
 }
 
 .cta-card-copy{

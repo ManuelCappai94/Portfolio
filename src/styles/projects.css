@@ -81,7 +81,7 @@
   border-radius: 15px;
   box-shadow: var(--dark-shadow);
    object-fit: cover;
-   border: 2px solid var(--bg);
+   border: 2px solid black;
    box-sizing: border-box;
    background: black;
 }

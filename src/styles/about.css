@@ -308,3 +308,9 @@ border-radius: 20px;
     font-size: 1.05rem;
   }
 }
+
+@media screen and (orientation: landscape) and (max-height: 500px) {
+.about-page{
+  margin-top: 8rem;
+}
+}

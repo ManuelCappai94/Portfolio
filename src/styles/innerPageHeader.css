@@ -59,3 +59,37 @@
         font-size: 1rem;
     }
 }
+
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  .inner-page-header {
+    top: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    padding: 0.35rem 3rem;
+    box-sizing: border-box;
+  }
+
+  .back-btn {
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 0;
+  }
+
+  .back-icon {
+    font-size: 2.25rem;
+  }
+
+  .back-text {
+    display: none;
+  }
+
+  .inner-page-header h2 {
+    font-size: clamp(1.25rem, 4vw, 1.8rem);
+    line-height: 1.1;
+  }
+}

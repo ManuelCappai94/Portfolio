@@ -296,7 +296,6 @@
   
 }
 
-  
   .experience-card-description {
   font-size: 1rem;
 }
@@ -317,4 +316,10 @@
     padding: 1.75rem;
   }
 
+}
+
+@media screen and (orientation: landscape) and (max-height: 500px) {
+.experience-page{
+  margin-top: 8rem;
+}
 }

@@ -128,8 +128,7 @@ h3 {
     width: 100%;
    margin: 5rem 0 1rem;
    min-height: 50dvh;
-   color: var(--text);
-   
+   color: var(--text);   
 }
 .corner {
   position: absolute;
@@ -232,7 +231,7 @@ h3 {
     font-size: 50px;
   }
   .main-page-content {
-    margin: 4rem auto 0;
+    margin: 5rem auto 0;
     max-width: 1200px;
   }
   .corner {
@@ -240,5 +239,26 @@ h3 {
   }
   .corner-top-left {
   top: 3rem;
+}
+}
+
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  .main-page-content {
+
+   margin: 3.5rem 0 1rem;
+  
+  }
+  .scroll-indicator {
+   bottom: 1rem;
+  }
+  .corner {
+
+  border-right: 10px solid var(--keyword);
+  border-bottom: 10px solid var(--keyword);
+
+}
+.corner-bottom-right {
+  bottom: 0;
+  right: -1rem;
 }
 }

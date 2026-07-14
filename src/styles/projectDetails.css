@@ -366,3 +366,10 @@
   color: var(--keyword);
 }
 }
+
+@media screen and (orientation: landscape) and (max-height: 500px) {
+.project-detail-article{
+  margin: 2rem auto 0;
+
+}
+}

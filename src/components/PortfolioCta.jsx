@@ -1,4 +1,4 @@
-import cv from "../data/documents/cv/Manuel_Cappai_CV_Junior_Frontend_Developer.pdf"
+import cv from "../data/documents/cv/Manuel_Cappai_CV_Frontend_Developer.pdf"
 import "../styles/portfolioCta.css"
 import { FaGithub, FaLongArrowAltRight } from "react-icons/fa";
 import { IoDocumentTextOutline } from "react-icons/io5";

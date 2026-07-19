@@ -2,6 +2,7 @@ import "../../../styles/projectDetails.css"
 import fallBackProjects from "../../../images/fallBackProjects.png"
 import { IoIosBuild } from "react-icons/io";
 import { RiGitRepositoryLine } from "react-icons/ri";
+import { MdOutlineLiveTv } from "react-icons/md";
 
 const ProjectDescription = ({project}) => {
  const {
@@ -124,6 +125,14 @@ const ProjectDescription = ({project}) => {
                     className='project-repo-link'
                     >
                     <span className="meta-icon"><RiGitRepositoryLine/></span>  Link to {title} repository
+                    </a>
+                  <a 
+                    href={demoUrl}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='project-repo-link'
+                    >
+                    <span className="meta-icon"><MdOutlineLiveTv/></span>  Link to Live Demo
                     </a>
                 </aside>
           </div>

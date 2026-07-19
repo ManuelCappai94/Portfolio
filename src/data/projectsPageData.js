@@ -78,10 +78,10 @@ export const data = [
         context: "Mayerfeld Practicum",
         desc: "Arcade jumping game with dynamic difficulty",
         img: zippy,
-        version: "v.1.0",
+        version: "v.1.1",
         demoUrl: "https://manuelcappai94.github.io/js-jumping-game/",
         longDesc:
-           "Zippy the Hive Hopper is a team-built browser arcade game developed during the Mayerfeld frontend practicum. The project uses HTML, CSS and JavaScript to create a lightweight jumping game with a requestAnimationFrame-based loop, player movement, obstacle spawning, collision detection, score tracking, health management, restart flow, progressive difficulty, dedicated sound effects, and original music composed for the project. My contribution focused on the core game loop, obstacle creation and cleanup, hitboxes, player movement, map boundaries, health and scoring logic, bug fixing, code cleanup, and general technical coordination within the team.",
+            "Zippy the Hive Hopper is a team-built browser arcade game developed during the Mayerfeld frontend practicum. The project uses HTML, CSS and JavaScript to create a lightweight jumping game with a requestAnimationFrame-based loop, player movement, obstacle spawning, collision detection, score tracking, health management, restart flow, progressive difficulty, dedicated sound effects, original music composed for the project, and a responsive layout that makes the game playable on both desktop and mobile devices. My contribution focused on the core game loop, obstacle creation and cleanup, hitboxes, player movement, map boundaries, health and scoring logic, bug fixing, code cleanup, and general technical coordination within the team.",
         features: [
             "Browser-based arcade jumping gameplay",
             "requestAnimationFrame-based game loop",
@@ -89,19 +89,29 @@ export const data = [
             "Obstacle spawning and cleanup system",
             "Collision detection logic",
             "Health and score tracking",
-            "Restart flow after game over",
+            "Pause menu with desktop and mobile access",
+            "Game over restart flow",
+            "Pause menu return to main menu",
             "DOM-based rendering with CSS styling",
             "Dedicated sound effects and original music",
-            "Responsive layout adjustments"
+            "Responsive layout with desktop and mobile controls"
         ],
         controls: [
             {
-            title: "Move",
-            keys: ["'A'", "'D'"]
+                title: "Desktop movement",
+                keys: ["'A'", "'D'"]
             },
             {
-            title: "Jump",
-            keys: ["'Space'"]
+                title: "Desktop jump",
+                keys: ["'Space'"]
+            },
+            {
+                title: "Desktop pause menu",
+                keys: ["'Esc'"]
+            },
+            {
+                title: "Mobile controls",
+                keys: ["'←'", "'→'", "'A'", "'☰'"]
             }
         ],
         repoUrl: "https://github.com/ManuelCappai94/js-jumping-game"

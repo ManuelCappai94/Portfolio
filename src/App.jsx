@@ -20,31 +20,28 @@ function App() {
   const skillRef = useRef(null)
   const location = useLocation()
 
-  const getFromLocalStorage =() =>{
-  if (localStorage.getItem("theme")){
-    return localStorage.getItem("theme")
-  } else {
-  return "light-mode"
-  }
-  }
+  const getFromLocalStorage = () => {
+    const savedTheme = localStorage.getItem("theme");
 
-  const [theme, setTheme] = useState(getFromLocalStorage())
+    if (savedTheme) {
+      return savedTheme;
+    }
+
+    return "dark-mode";
+  };
+
+  const [theme, setTheme] = useState(getFromLocalStorage());
 
   const changeTheme = () => {
-    
-    if(theme === "light-mode"){
-      setTheme("dark-mode")
-      
-    } else {
-      setTheme("light-mode")
-  
-    }
-  }
+    setTheme((currentTheme) =>
+      currentTheme === "dark-mode" ? "light-mode" : "dark-mode"
+    );
+  };
 
-useEffect(()=>{
-  document.documentElement.className = theme;
-  localStorage.setItem("theme", theme)
-}, [theme])
+  useEffect(() => {
+    document.documentElement.className = theme;
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
 
 

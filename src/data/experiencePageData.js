@@ -5,6 +5,8 @@ import mayerfeldAICertificate from "./documents/certificates/dc50b790-fa53-4c8c-
 import  udemyReactCertificate from "./documents/certificates/UC-8acdf35f-7e46-4cb9-b34f-c2ce613045c5.pdf"
 import udemyJSCertificate from "./documents/certificates/UC-ec744161-daa4-4c70-a55c-f548cf38ed0c.pdf"
 import mayerfeldPracticumCertificate from "./documents/certificates/2709535b-3df5-4440-99aa-b97342482988.pdf"
+import recommendationLetterPdf from "./documents/recommendations/mayerfeld-recommendation-letter-public.pdf";
+import recommendationLetterPreview from "../images/recommendationLetterPreview.png";
 
 export const experienceCardsData = [
     {
@@ -67,5 +69,16 @@ export const certificationsData = [
     issuer: "Udemy",
     date: "October 2025",
     document: udemyJSCertificate,
+  },
+];
+
+export const recommendationsData = [
+  {
+    id: "mayerfeld-recommendation-letter",
+    title: "Frontend Development Practicum Recommendation Letter",
+    issuer: "Mayerfeld Consulting",
+    date: "July 2026",
+    document: recommendationLetterPdf,
+    preview: recommendationLetterPreview,
   },
 ];

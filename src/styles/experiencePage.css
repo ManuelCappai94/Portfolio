@@ -59,7 +59,8 @@
   line-height: 1.15;
 }
 
-#certifications-title, 
+#certifications-title,
+#recommendations-title, 
 .experience-card-title {
   font-size: clamp(1.25rem, 5vw, 1.6rem);
   line-height: 1.25;
@@ -191,7 +192,10 @@
 
 
 .credentials-layout {
-  padding: 1rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+  
 }
 
 .credentials-panel {
@@ -250,7 +254,42 @@
   text-align: left;
   color: var(--text);
 }
+.recommendations{
+  padding: 0.5rem;
+}
+.credentials-panel-header{
+color: inherit;
+}
+.recommendation-card-link{
+    display: block;
+  color: inherit;
+}
+.recommendation-figure{
+  margin: 0;
+  text-align: center;
+}
+.recommendation-preview {
+  display: block;
+  width: 95%;
+  border-radius: 15px;
+  max-width: 34rem;
+   margin: 0 auto;  
+}
+.recommendation-caption {
+  margin-top: 0.75rem;
+  color: var(--keyword);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
 
+.recommendation-note {
+  width: min(95%, 34rem);
+  margin: 1rem auto 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  text-align: center;
+}
 
 @media (hover: hover) {
   .experience-card-link:hover {
@@ -261,8 +300,11 @@
   .experience-card-link:hover .experience-card-image img {
     transform: scale(1.035);
   }
+
 .certification-card:hover,
-.certification-card:focus-visible {
+.certification-card:focus-visible,
+ .recommendation-figure:hover,
+ .recommendation-figure:focus-visible{
   border-color: var(--highlight);
   transform: scale(1.035);
 }
@@ -280,6 +322,8 @@
   .credentials-layout{
     max-width: 600px;
     margin: 0 auto;
+    
+
   }
 }
 
@@ -309,8 +353,26 @@
   }
 
   .credentials-layout {
-    
+    max-width: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+     align-items: start;
   }
+
+  .recommendations {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    justify-content: space-around;
+  }
+  .recommendations .credentials-panel-header {
+    flex-shrink: 0;
+  }
+
+  
+  .recommendation-figure {
+    width: 100%;
+  }
+
 
   .credentials-panel {
     padding: 1.75rem;

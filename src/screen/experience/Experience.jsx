@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import InnerPageHeader from "../../components/InnerPageHeader"
 import { useNavigate, Link } from "react-router-dom"
 import "../../styles/experiencePage.css"
-import { experienceCardsData, certificationsData } from "../../data/experiencePageData"
+import { experienceCardsData, certificationsData, recommendationsData} from "../../data/experiencePageData"
 import PortfolioCta from "../../components/PortfolioCta"
 
 
@@ -31,12 +31,12 @@ const Experience = () => {
             </h2>
             <p className="experience-intro-copy">
                 A selection of{" "}
-                <strong>technical</strong> and{" "}
+                <strong className="highlighted">technical</strong> and{" "}
                 <strong className="string">international experiences</strong> that shaped
                 how I approach frontend development, teamwork, communication, and
                 project delivery. This page also collects{" "}
-                <strong className="commented">professional credentials</strong> that document
-                my training and practical growth.
+                <strong className="commented">professional credentials</strong> and
+                recommendations that support that journey.
             </p>
         </header>
         <section 
@@ -50,7 +50,7 @@ const Experience = () => {
                 </h2>
                 <p className="section-copy">
                     Explore the{" "}
-                    <strong >environments</strong>, responsibilities, and
+                    <strong className="string">environments</strong>, responsibilities, and
                     challenges that contributed to my{" "}
                     <strong className="commented">professional development</strong>.
                 </p>
@@ -71,18 +71,20 @@ const Experience = () => {
             <header className="experience-section-header">
                 <p className="section-label">Professional validation</p>
                 <h2 id="credentials-title" className="section-label-title">
-                    <strong className="highlighted">Professional credentials</strong>
+                    <strong className="highlighted">Credentials and recommendations</strong>
                 </h2>
                 <p className="section-copy">
-                    Certifications that document my{" "}
-                    <strong className="string">training path</strong>, professional experience,
-                    and project-based{" "}
+                        Certifications and{" "}
+                    <strong className="string">external references</strong> that document my
+                    training, professional conduct, and contribution to{" "}
                     <strong className="commented">collaborative work</strong>.
                 </p>
             </header>
 
             <div className="credentials-layout">
-                <section className="certifications">
+                <section
+                    className="certifications" aria-labelledby="certifications-title"
+                    >
                     <header className="credentials-panel-header">
                         <h3 id="certifications-title">Certifications</h3>
                     </header>
@@ -109,13 +111,48 @@ const Experience = () => {
                     ))
                     }
                 </section>
-          
+                <section
+                    className="recommendations"
+                    aria-labelledby="recommendations-title" >
+                    <header className="credentials-panel-header">
+                        <h3 id="recommendations-title">Letter of Recommendation</h3>
+                    </header>
+                    {
+                        recommendationsData.map(recommendation => (
+                        <a
+                        key={recommendation.id}
+                        href={recommendation.document}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="recommendation-card-link"
+                        >
+                        <figure className="recommendation-figure">
+                            <img
+                            src={recommendation.preview}
+                            alt="Preview of the Mayerfeld Consulting recommendation letter for Manuel Cappai"
+                            className="recommendation-preview"
+                            />
+
+                            <figcaption className="recommendation-caption">
+                            Recommendation letter from Mayerfeld Consulting
+                            </figcaption>
+                        </figure>
+                    </a>
+                        ))
+                    }
+
+                    <p className="recommendation-note">
+                        Received after completing the Mayerfeld Frontend Development Practicum.
+                    </p>
+                                        
+                </section>
             </div>
         </section>
     <PortfolioCta/>    
     </section>
   )
 }
+
 
 const ExperienceCard = ({title, label, date, description, image, imageAlt})=>{
     return(
